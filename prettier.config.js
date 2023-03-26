@@ -3,5 +3,6 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'es5',
   tailwindConfig: './tailwind.config.js',
-  plugins: [],
+  importOrderSortSpecifiers: true,
+  plugins: [require('prettier-plugin-twin.macro')],
 };

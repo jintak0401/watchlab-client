@@ -12,7 +12,12 @@ const nextConfig = withTwin({
     return config;
   },
   images: {
-    domains: [],
+    domains: ['lh3.googleusercontent.com', 'watchlab-s3.s3.amazonaws.com'],
+  },
+  i18n: {
+    locales: ['en', 'ko', 'jp', 'zh'],
+    defaultLocale: 'en',
+    localeDetection: false,
   },
 });
 

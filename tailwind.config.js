@@ -10,6 +10,9 @@ module.exports = {
         electric: '#db00ff',
         ribbon: '#0047ff',
       },
+      backgroundImage: {
+        glossary: "url('/static/images/glossary/background.webp')",
+      },
     },
   },
   plugins: [],

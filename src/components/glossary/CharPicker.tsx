@@ -50,17 +50,16 @@ const CharPicker = () => {
       }px`;
     };
 
+    const picker = alphabetRefs.current[selectedChar];
+    const ghostFace = ghostFaceRef.current;
+
     const onResize = () => {
-      move(alphabetRefs.current[selectedChar], ghostFaceRef.current);
+      move(picker, ghostFace);
     };
 
     window.addEventListener('resize', onResize);
-    onResize();
 
-    const timeout = setTimeout(
-      () => move(alphabetRefs.current[selectedChar], ghostFaceRef.current),
-      10
-    );
+    const timeout = setTimeout(() => move(picker, ghostFace), 10);
 
     return () => {
       window.removeEventListener('resize', onResize);
@@ -84,7 +83,7 @@ const CharPicker = () => {
     >
       <NextImage
         ref={ghostFaceRef}
-        tw="pointer-events-none absolute"
+        css={[tw`pointer-events-none absolute`, { left: -100 }]}
         src={'/static/images/glossary/ghost-face.webp'}
         alt={'ghost-face'}
         width={100}

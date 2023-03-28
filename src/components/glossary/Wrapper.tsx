@@ -8,7 +8,7 @@ interface Props {
 const Wrapper = ({ children }: Props) => {
   return (
     <div tw="h-screen w-screen bg-glossary">
-      <div tw="flex h-full w-full items-center justify-center bg-gradient-to-b from-black to-transparent">
+      <div tw="flex h-full w-full flex-col items-center justify-center gap-6 bg-gradient-to-b from-black to-transparent">
         {children}
       </div>
     </div>

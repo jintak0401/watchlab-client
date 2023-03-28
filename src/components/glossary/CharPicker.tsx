@@ -1,3 +1,4 @@
+import metadata from 'data/metadata';
 import { useAtom } from 'jotai';
 import NextImage from 'next/image';
 import { useEffect, useRef } from 'react';
@@ -23,8 +24,16 @@ const CharPicker = () => {
       const elLeft = el.offsetLeft;
       const ghostFaceElWidth = ghostFaceEl.offsetWidth;
       const ghostFaceElLeft = ghostFaceEl.offsetLeft;
-      ghostFaceEl.style.transform = `translateX(${
+
+      const elHeight = el.offsetHeight;
+      const elTop = el.offsetTop;
+      const ghostFaceElHeight = ghostFaceEl.offsetHeight;
+      const ghostFaceElTop = ghostFaceEl.offsetTop;
+
+      ghostFaceEl.style.transform = `translate(${
         elLeft - ghostFaceElLeft + elWidth / 2 - ghostFaceElWidth / 2
+      }px, ${
+        elTop - ghostFaceElTop + elHeight / 2 - (ghostFaceElHeight * 2) / 3
       }px)`;
     }
   };
@@ -77,14 +86,14 @@ const CharPicker = () => {
   return (
     <div
       css={[
-        tw`flex flex-row items-center justify-between gap-2 text-white text-4xl`,
+        tw`my-4 flex flex-row items-center justify-between gap-2 text-white text-4xl`,
         { width: 1300 },
       ]}
     >
       <NextImage
         ref={ghostFaceRef}
         css={[tw`pointer-events-none absolute`, { left: -100 }]}
-        src={'/static/images/glossary/ghost-face.webp'}
+        src={metadata.images.ghostFace}
         alt={'ghost-face'}
         width={100}
         height={100}
@@ -102,7 +111,7 @@ const CharPicker = () => {
           {char === '@' ? (
             <NextImage
               tw="w-full"
-              src={'/static/images/glossary/loupes.webp'}
+              src={metadata.images.loupes}
               alt={'loupes'}
               width={100}
               height={100}

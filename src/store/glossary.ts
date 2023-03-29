@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 
-import { GlossaryChar } from '@/types';
+import { GlossaryChar, Word } from '@/types';
 
 const _glossaryCharAtom = atom<GlossaryChar>('@');
 
@@ -26,5 +26,14 @@ export const glossaryTableAtom = atom(
   (get) => get(_glossaryTableAtom),
   (get, set, update: boolean) => {
     set(_glossaryTableAtom, update);
+  }
+);
+
+const _glossaryFilteredWordsAtom = atom<Word[]>([]);
+
+export const glossaryFilteredWordsAtom = atom(
+  (get) => get(_glossaryFilteredWordsAtom),
+  (get, set, update: Word[]) => {
+    set(_glossaryFilteredWordsAtom, update);
   }
 );

@@ -6,14 +6,33 @@ import { useTranslation } from 'next-i18next';
 import tw from 'twin.macro';
 
 import { useGlossaryQuery } from '@/hooks/rq/glossary';
+import useDebounce from '@/hooks/useDebounce';
 
-import { glossarySearchAtom } from '@/store/glossary';
+import {
+  glossaryFilteredWordsAtom,
+  glossarySearchAtom,
+  glossaryTableAtom,
+} from '@/store/glossary';
+import { Word } from '@/types';
+import { fuzzySearch } from '@/utils/fuzzy';
 
 const InputSearch = () => {
   const { locale = 'en' } = useRouter();
   const { t } = useTranslation('glossary');
   const [search, setSearch] = useAtom(glossarySearchAtom);
-  const { data: glossaryData } = useGlossaryQuery(locale);
+  const [, setFilteredWords] = useAtom(glossaryFilteredWordsAtom);
+  const [, setTableShow] = useAtom(glossaryTableAtom);
+  const { data: wordList } = useGlossaryQuery(locale);
+  const debounceFilter = useDebounce((inputSearch: string) => {
+    if (!wordList) return;
+    setTableShow(true);
+    setFilteredWords(
+      fuzzySearch<Word>(wordList as Word[], inputSearch, [
+        'word',
+        'description',
+      ])
+    );
+  }, 500);
 
   return (
     <div tw="relative">
@@ -33,12 +52,15 @@ const InputSearch = () => {
         ]}
         type="text"
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => {
+          setSearch(e.target.value);
+          debounceFilter(e.target.value);
+        }}
         placeholder={
-          (glossaryData
+          (wordList
             ? t('placeholderAfterLoad').replace(
                 '%s',
-                glossaryData.length.toLocaleString()
+                wordList.length.toLocaleString()
               )
             : t('placeholderBeforeLoad')) as string
         }

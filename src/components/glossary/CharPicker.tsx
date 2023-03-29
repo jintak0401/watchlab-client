@@ -4,12 +4,17 @@ import NextImage from 'next/image';
 import { useEffect, useRef } from 'react';
 import tw from 'twin.macro';
 
-import { glossaryCharAtom, glossarySearchAtom } from '@/store/glossary';
+import {
+  glossaryCharAtom,
+  glossarySearchAtom,
+  glossaryTableAtom,
+} from '@/store/glossary';
 import { GlossaryChar, glossaryChars } from '@/types';
 
 const CharPicker = () => {
   const [selectedChar, setSelectedChar] = useAtom(glossaryCharAtom);
   const [search] = useAtom(glossarySearchAtom);
+  const [, setTableShow] = useAtom(glossaryTableAtom);
   const ghostFaceRef = useRef<HTMLImageElement | null>(null);
   const alphabetRefs = useRef<{
     [key: GlossaryChar]: HTMLButtonElement | null;
@@ -106,6 +111,7 @@ const CharPicker = () => {
           onClick={() => {
             setSelectedChar(char);
             moveGhostFace(char);
+            setTableShow(true);
           }}
         >
           {char === '@' ? (

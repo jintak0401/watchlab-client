@@ -1,11 +1,15 @@
 import metadata from 'data/metadata';
 import { useAtom } from 'jotai';
 import NextImage from 'next/image';
+import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import tw from 'twin.macro';
 
+import { useGlossaryQuery } from '@/hooks/rq/glossary';
+
 import {
   glossaryCharAtom,
+  glossaryFilteredWordsAtom,
   glossarySearchAtom,
   glossaryTableAtom,
 } from '@/store/glossary';
@@ -20,11 +24,14 @@ const CharPicker = () => {
     [key: GlossaryChar]: HTMLButtonElement | null;
   }>({});
 
+  const { locale = 'en' } = useRouter();
+  const { data: wordList } = useGlossaryQuery(locale);
+  const [, setFilteredWords] = useAtom(glossaryFilteredWordsAtom);
+
   const moveGhostFace = (char: string) => {
     const el = alphabetRefs.current[char];
     const ghostFaceEl = ghostFaceRef.current;
     if (el && ghostFaceEl) {
-      // translate ghost face to the center of the selected char with translate not left
       const elWidth = el.offsetWidth;
       const elLeft = el.offsetLeft;
       const ghostFaceElWidth = ghostFaceEl.offsetWidth;
@@ -41,6 +48,11 @@ const CharPicker = () => {
         elTop - ghostFaceElTop + elHeight / 2 - (ghostFaceElHeight * 2) / 3
       }px)`;
     }
+  };
+
+  const filterWords = (char: GlossaryChar) => {
+    if (!wordList) return;
+    setFilteredWords(wordList.filter(({ word }) => word.startsWith(char)));
   };
 
   useEffect(() => {
@@ -112,6 +124,7 @@ const CharPicker = () => {
             setSelectedChar(char);
             moveGhostFace(char);
             setTableShow(true);
+            filterWords(char);
           }}
         >
           {char === '@' ? (

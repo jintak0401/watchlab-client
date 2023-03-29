@@ -19,3 +19,12 @@ export const glossarySearchAtom = atom(
     set(_glossarySearchAtom, update);
   }
 );
+
+const _glossaryTableAtom = atom(false);
+
+export const glossaryTableAtom = atom(
+  (get) => get(_glossaryTableAtom),
+  (get, set, update: boolean) => {
+    set(_glossaryTableAtom, update);
+  }
+);

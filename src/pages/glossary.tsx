@@ -7,7 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 import tw from 'twin.macro';
 
-import { getGlossaryKey } from '@/hooks/rq/glossary';
+import { getGlossaryKey, useGlossaryQuery } from '@/hooks/rq/glossary';
 
 import CharPicker from '@/components/glossary/CharPicker';
 import GlossaryTable from '@/components/glossary/GlossaryTable';
@@ -15,7 +15,7 @@ import InputSearch from '@/components/glossary/InputSearch';
 import GlossaryWrapper from '@/components/glossary/Wrapper';
 
 import { getGlossary } from '@/request/glossary';
-import { glossaryTableAtom } from '@/store/glossary';
+import { glossaryFilteredWordsAtom, glossaryTableAtom } from '@/store/glossary';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const queryClient = new QueryClient();
@@ -37,12 +37,20 @@ const GlossaryPage = () => {
   const { locale = 'en' } = useRouter();
   const { t } = useTranslation('glossary');
   const [showTable, setShowTable] = useAtom(glossaryTableAtom);
+  const [, setFilteredWords] = useAtom(glossaryFilteredWordsAtom);
+  const { data: wordList } = useGlossaryQuery(locale);
 
   useEffect(() => {
     return () => {
       setShowTable(false);
     };
   }, []);
+
+  useEffect(() => {
+    if (wordList) {
+      setFilteredWords(wordList);
+    }
+  }, [wordList]);
 
   return (
     <GlossaryWrapper>

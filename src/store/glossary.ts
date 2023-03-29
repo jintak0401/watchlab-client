@@ -1,3 +1,4 @@
+import Fuse from 'fuse.js';
 import { atom } from 'jotai';
 
 import { GlossaryChar, Word } from '@/types';
@@ -29,11 +30,11 @@ export const glossaryTableAtom = atom(
   }
 );
 
-const _glossaryFilteredWordsAtom = atom<Word[]>([]);
+const _glossaryFilteredWordsAtom = atom<Word[] | Fuse.FuseResult<Word>[]>([]);
 
 export const glossaryFilteredWordsAtom = atom(
   (get) => get(_glossaryFilteredWordsAtom),
-  (get, set, update: Word[]) => {
+  (get, set, update: Word[] | Fuse.FuseResult<Word>[]) => {
     set(_glossaryFilteredWordsAtom, update);
   }
 );

@@ -10,6 +10,7 @@ module.exports = {
         primary: colors.indigo,
         electric: '#db00ff',
         ribbon: '#0047ff',
+        'glossary-table': '#e2d1d1',
       },
       fontFamily: {
         cormor: ['var(--font-cormorant-garamond)', ...fontFamily.sans],

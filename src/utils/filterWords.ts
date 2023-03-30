@@ -5,7 +5,7 @@ import { GlossaryChar, Word } from '@/types';
 const options = {
   shouldSort: true,
   includeMatches: true,
-  minMatchCharLength: 2,
+  minMatchCharLength: 3,
   threshold: 0.3,
   fieldNormWeight: 1.5,
 };
@@ -46,6 +46,8 @@ export const filterWordsWithStart = (words: Word[], start: GlossaryChar) => {
   } else if (start.match(/^[a-zA-Z]+$/)) {
     return words.filter(({ word }) => word[0] === start);
   } else {
-    return words.filter(({ word }) => !word.match(/^[a-zA-Z]/));
+    return words.filter(
+      ({ word }) => !word.match(/^[a-zA-ZäàœÄéèêëÉÈÊËïîÏÎöôÖÔüûÜÛÿŸçÇñÑßẞ]/)
+    );
   }
 };

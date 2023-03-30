@@ -14,10 +14,11 @@ import {
   glossaryTableAtom,
 } from '@/store/glossary';
 import { GlossaryChar, glossaryChars } from '@/types';
+import { filterWordsWithStart } from '@/utils/filterWords';
 
 const CharPicker = () => {
   const [selectedChar, setSelectedChar] = useAtom(glossaryCharAtom);
-  const [search] = useAtom(glossarySearchAtom);
+  const [search, setSearch] = useAtom(glossarySearchAtom);
   const [, setTableShow] = useAtom(glossaryTableAtom);
   const ghostFaceRef = useRef<HTMLImageElement | null>(null);
   const alphabetRefs = useRef<{
@@ -52,7 +53,7 @@ const CharPicker = () => {
 
   const filterWords = (char: GlossaryChar) => {
     if (!wordList) return;
-    setFilteredWords(wordList.filter(({ word }) => word.startsWith(char)));
+    setFilteredWords(filterWordsWithStart(wordList, char));
   };
 
   useEffect(() => {
@@ -122,6 +123,7 @@ const CharPicker = () => {
           ref={(el) => (alphabetRefs.current[char] = el)}
           onClick={() => {
             setSelectedChar(char);
+            setSearch('');
             moveGhostFace(char);
             setTableShow(true);
             filterWords(char);

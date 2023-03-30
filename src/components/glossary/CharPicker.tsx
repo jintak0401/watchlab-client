@@ -29,7 +29,7 @@ const CharPicker = () => {
   const { data: wordList } = useGlossaryQuery(locale);
   const [, setFilteredWords] = useAtom(glossaryFilteredWordsAtom);
 
-  const moveGhostFace = (char: string) => {
+  const moveGhostFace = (char: GlossaryChar) => {
     const el = alphabetRefs.current[char];
     const ghostFaceEl = ghostFaceRef.current;
     if (el && ghostFaceEl) {
@@ -52,8 +52,7 @@ const CharPicker = () => {
   };
 
   const filterWords = (char: GlossaryChar) => {
-    if (!wordList) return;
-    setFilteredWords(filterWordsWithStart(wordList, char));
+    return !wordList ? [] : filterWordsWithStart(wordList, char);
   };
 
   useEffect(() => {
@@ -109,6 +108,7 @@ const CharPicker = () => {
       ]}
     >
       <NextImage
+        draggable={false}
         ref={ghostFaceRef}
         css={[tw`pointer-events-none absolute`, { left: -100 }]}
         src={metadata.images.ghostFace}
@@ -116,7 +116,7 @@ const CharPicker = () => {
         width={100}
         height={100}
       />
-      {(glossaryChars as GlossaryChar[]).map((char: GlossaryChar, idx) => (
+      {(glossaryChars as GlossaryChar[]).map((char: GlossaryChar) => (
         <button
           tw="block w-full"
           key={char}
@@ -125,12 +125,14 @@ const CharPicker = () => {
             setSelectedChar(char);
             setSearch('');
             moveGhostFace(char);
-            setTableShow(true);
-            filterWords(char);
+            const words = filterWords(char);
+            setFilteredWords(words);
+            setTableShow(words.length > 0);
           }}
         >
           {char === '@' ? (
             <NextImage
+              draggable={false}
               tw="w-full"
               src={metadata.images.loupes}
               alt={'loupes'}

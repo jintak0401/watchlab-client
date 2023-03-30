@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
-import tw from 'twin.macro';
+import tw, { css } from 'twin.macro';
 
 import { getGlossaryKey, useGlossaryQuery } from '@/hooks/rq/glossary';
 
@@ -64,10 +64,13 @@ const GlossaryPage = () => {
       <div
         css={[
           tw`absolute top-1/2 flex -translate-y-1/2 flex-col items-center justify-center gap-y-6`,
-          showTable && {
-            transition: 'top 0.8s ease-in-out',
-            top: 250,
-          },
+          css`
+            transition: top 0.8s ease-in-out;
+          `,
+          showTable &&
+            css`
+              top: 250px;
+            `,
         ]}
       >
         <h1 tw="font-cormor font-bold text-8xl text-white">{t('title')}</h1>

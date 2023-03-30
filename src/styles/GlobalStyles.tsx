@@ -3,7 +3,7 @@ import tw, { css, GlobalStyles as BaseStyles } from 'twin.macro';
 
 const customStyles = css({
   body: {
-    ...tw`select-none antialiased`,
+    ...tw`select-none antialiased print:hidden`,
   },
 });
 

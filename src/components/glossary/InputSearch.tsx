@@ -25,19 +25,19 @@ const InputSearch = () => {
   const { data: wordList } = useGlossaryQuery(locale);
   const debounceFilter = useDebounce((inputSearch: string) => {
     if (!wordList) return;
-    setTableShow(true);
-    setFilteredWords(
-      fuzzySearch<Word>(wordList as Word[], inputSearch, [
-        'word',
-        'description',
-      ])
-    );
+    const words = fuzzySearch<Word>(wordList as Word[], inputSearch, [
+      'word',
+      'description',
+    ]);
+    setTableShow(words.length > 0);
+    setFilteredWords(words);
   }, 500);
 
   return (
     <div tw="relative">
       <div tw="absolute inset-y-0 left-0 flex items-center">
         <NextImage
+          draggable={false}
           tw="h-2/3 object-contain"
           src={metadata.images.loupes}
           alt={'loupes'}

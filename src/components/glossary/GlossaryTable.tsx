@@ -1,35 +1,13 @@
 import { useAtom } from 'jotai';
-import React, { ReactNode, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import tw, { css } from 'twin.macro';
 
 import Row from '@/components/glossary/Table/Row';
 
 import { glossaryFilteredWordsAtom, glossaryTableAtom } from '@/store/glossary';
-import { instanceOfWord, Word } from '@/types';
+import { instanceOfWord } from '@/types';
 
 import Table from './Table/Table';
-
-const HighlightedText = ({
-  text,
-  indices,
-}: {
-  text: string;
-  indices: ReadonlyArray<[number, number]>;
-}) => {
-  const result = [];
-  let last = 0;
-  for (const [start, end] of indices) {
-    result.push(text.slice(last, start));
-    result.push(
-      <span tw="bg-yellow-300" key={start}>
-        {text.slice(start, end + 1)}
-      </span>
-    );
-    last = end + 1;
-  }
-  result.push(text.slice(last));
-  return <>{result}</>;
-};
 
 const GlossaryTable = () => {
   const [tableShow] = useAtom(glossaryTableAtom);
@@ -62,40 +40,18 @@ const GlossaryTable = () => {
       ]}
     >
       {filteredWords?.map((word, idx) => {
-        if (instanceOfWord(word)) {
-          return (
-            <Row
-              key={word.word}
-              css={[idx === filteredWords.length - 1 && tw`border-b-0`]}
-              word={word.word}
-              description={word.description}
-            />
-          );
-        }
-        // fuzzy
-        else {
-          const { item, matches } = word;
+        const { word: _word, description } = instanceOfWord(word)
+          ? word
+          : word.item;
 
-          const wordObj: { word: ReactNode; description: ReactNode } = {
-            ...item,
-          };
-          matches?.forEach((match) => {
-            const key = match.key as keyof Word;
-            wordObj[key] = HighlightedText({
-              text: item[key],
-              indices: match.indices,
-            });
-          });
-
-          return (
-            <Row
-              key={item.word}
-              css={[idx === filteredWords.length - 1 && tw`border-b-0`]}
-              word={wordObj.word ?? item.word}
-              description={wordObj.description ?? item.description}
-            />
-          );
-        }
+        return (
+          <Row
+            key={_word}
+            css={[idx === 0 && tw`border-t-0`]}
+            word={_word}
+            description={description}
+          />
+        );
       })}
     </Table>
   );

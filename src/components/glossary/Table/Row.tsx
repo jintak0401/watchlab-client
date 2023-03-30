@@ -10,11 +10,11 @@ const Row = ({ word, description, ...rest }: Props) => {
     <tr tw="border-gray-900 border-b bg-glossary-table text-gray-900" {...rest}>
       <th
         scope="row"
-        tw="whitespace-nowrap border-gray-800 border-r px-4 font-bold text-2xl"
+        tw="whitespace-nowrap border-gray-800 border-r px-4 font-bold text-3xl"
       >
         {word}
       </th>
-      <td tw="px-4 py-4 text-base">{description}</td>
+      <td tw="px-4 py-4 font-semibold text-xl">{description}</td>
     </tr>
   );
 };

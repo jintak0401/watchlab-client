@@ -25,10 +25,17 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     getGlossary(locale)
   );
 
+  const [translations] = await Promise.all([
+    serverSideTranslations(locale, ['glossary']),
+    queryClient.prefetchQuery(getGlossaryKey(locale), () =>
+      getGlossary(locale)
+    ),
+  ]);
+
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
-      ...(await serverSideTranslations(locale, ['glossary'])),
+      ...translations,
     },
   };
 }

@@ -1339,7 +1339,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.8.4":
   version: 7.21.0
   resolution: "@babel/runtime@npm:7.21.0"
   dependencies:
@@ -2058,6 +2058,16 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
+  languageName: node
+  linkType: hard
+
+"@types/hoist-non-react-statics@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "@types/hoist-non-react-statics@npm:3.3.1"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: 2c0778570d9a01d05afabc781b32163f28409bb98f7245c38d5eaf082416fdb73034003f5825eb5e21313044e8d2d9e1f3fe2831e345d3d1b1d20bcd12270719
   languageName: node
   linkType: hard
 
@@ -2941,6 +2951,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3":
+  version: 3.29.1
+  resolution: "core-js@npm:3.29.1"
+  checksum: b38446dbfcfd3887b3d4922990da487e2c95044cb4c5717aaf95e786a4c6b218f05c056c7ed6c699169b9794a49fec890e402659d54661fc56965a0eb717e7bd
+  languageName: node
+  linkType: hard
+
 "cosmiconfig@npm:^7.0.0":
   version: 7.1.0
   resolution: "cosmiconfig@npm:7.1.0"
@@ -3226,7 +3243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"domhandler@npm:^5.0.1, domhandler@npm:^5.0.2":
+"domhandler@npm:5.0.3, domhandler@npm:^5.0.1, domhandler@npm:^5.0.2, domhandler@npm:^5.0.3":
   version: 5.0.3
   resolution: "domhandler@npm:5.0.3"
   dependencies:
@@ -3981,6 +3998,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fuse.js@npm:^6.6.2":
+  version: 6.6.2
+  resolution: "fuse.js@npm:6.6.2"
+  checksum: 17ae758ce205276ebd88bd9c9f088a100be0b4896abac9f6b09847151269d1690f41d7f98ff5813d4a58973162dbd99d0072ce807020fee6f9de60170f6b08eb
+  languageName: node
+  linkType: hard
+
 "gauge@npm:^4.0.3":
   version: 4.0.4
   resolution: "gauge@npm:4.0.4"
@@ -4249,12 +4273,57 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.1":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
     react-is: ^16.7.0
   checksum: b1538270429b13901ee586aa44f4cc3ecd8831c061d06cb8322e50ea17b3f5ce4d0e2e66394761e6c8e152cd8c34fb3b4b690116c6ce2bd45b18c746516cb9e8
+  languageName: node
+  linkType: hard
+
+"html-dom-parser@npm:3.1.7":
+  version: 3.1.7
+  resolution: "html-dom-parser@npm:3.1.7"
+  dependencies:
+    domhandler: 5.0.3
+    htmlparser2: 8.0.2
+  checksum: 72bc83cbb4fc67c0982afe0fef22f4c9d886b477776e369fc4bc079e8c96a35c3a819bd3604cbea13431ec7db9b96340f184afc73f5f3efa835ec4acd471db3b
+  languageName: node
+  linkType: hard
+
+"html-parse-stringify@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "html-parse-stringify@npm:3.0.1"
+  dependencies:
+    void-elements: 3.1.0
+  checksum: 334fdebd4b5c355dba8e95284cead6f62bf865a2359da2759b039db58c805646350016d2017875718bc3c4b9bf81a0d11be5ee0cf4774a3a5a7b97cde21cfd67
+  languageName: node
+  linkType: hard
+
+"html-react-parser@npm:^3.0.15":
+  version: 3.0.15
+  resolution: "html-react-parser@npm:3.0.15"
+  dependencies:
+    domhandler: 5.0.3
+    html-dom-parser: 3.1.7
+    react-property: 2.0.0
+    style-to-js: 1.1.3
+  peerDependencies:
+    react: 0.14 || 15 || 16 || 17 || 18
+  checksum: 9cb3ae0e9a4cf02b640f6fdcc456cc7922497c4d3692d95d999abbe8b40594cbb8738ec71e3275df21bfc4d54980c928884f8c01132e3366bd1d8b2f4ba83f02
+  languageName: node
+  linkType: hard
+
+"htmlparser2@npm:8.0.2":
+  version: 8.0.2
+  resolution: "htmlparser2@npm:8.0.2"
+  dependencies:
+    domelementtype: ^2.3.0
+    domhandler: ^5.0.3
+    domutils: ^3.0.1
+    entities: ^4.4.0
+  checksum: 29167a0f9282f181da8a6d0311b76820c8a59bc9e3c87009e21968264c2987d2723d6fde5a964d4b7b6cba663fca96ffb373c06d8223a85f52a6089ced942700
   languageName: node
   linkType: hard
 
@@ -4292,6 +4361,22 @@ __metadata:
   dependencies:
     ms: ^2.0.0
   checksum: 9c7a74a2827f9294c009266c82031030eae811ca87b0da3dceb8d6071b9bde22c9f3daef0469c3c533cc67a97d8a167cd9fc0389350e5f415f61a79b171ded16
+  languageName: node
+  linkType: hard
+
+"i18next-fs-backend@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "i18next-fs-backend@npm:2.1.1"
+  checksum: fe606df2639b3ea49501b5bc947553e4bfbce67290c91ab22a8b9ecee4d11b8ae78179980720998881f117f0321d3ba0f739fb93a0ab95613cd79b85ffb014f5
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^22.4.13":
+  version: 22.4.13
+  resolution: "i18next@npm:22.4.13"
+  dependencies:
+    "@babel/runtime": ^7.20.6
+  checksum: a40ca4ce749854a806a01e3e60ee492f2911b1f7acb6ed338bb023211259ef8c39e914734d10197d3279941459767897ceb1989c8e24cd73730fdf211e079037
   languageName: node
   linkType: hard
 
@@ -4356,6 +4441,13 @@ __metadata:
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
+  languageName: node
+  linkType: hard
+
+"inline-style-parser@npm:0.1.1":
+  version: 0.1.1
+  resolution: "inline-style-parser@npm:0.1.1"
+  checksum: 5d545056a3e1f2bf864c928a886a0e1656a3517127d36917b973de581bd54adc91b4bf1febcb0da054f204b4934763f1a4e09308b4d55002327cf1d48ac5d966
   languageName: node
   linkType: hard
 
@@ -5110,6 +5202,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-i18next@npm:^13.2.2":
+  version: 13.2.2
+  resolution: "next-i18next@npm:13.2.2"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    "@types/hoist-non-react-statics": ^3.3.1
+    core-js: ^3
+    hoist-non-react-statics: ^3.3.2
+    i18next-fs-backend: ^2.1.1
+  peerDependencies:
+    i18next: ^22.0.6
+    next: ">= 12.0.0"
+    react: ">= 17.0.2"
+    react-i18next: ^12.2.0
+  checksum: 2adfc9facea57a5e733557d06377a85b991aa23dbc80f7af4856cfba224eac6714a46a970022a519dbda266371193f9251b12f29175a46d2b97cfcee21d5b1d4
+  languageName: node
+  linkType: hard
+
 "next@npm:13.2.4":
   version: 13.2.4
   resolution: "next@npm:13.2.4"
@@ -5627,6 +5737,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier-plugin-twin.macro@npm:^1.0.11":
+  version: 1.0.11
+  resolution: "prettier-plugin-twin.macro@npm:1.0.11"
+  peerDependencies:
+    prettier: ">=2.2.0"
+    tailwindcss: ">=3.0.24"
+  checksum: f65f04103e2ce99ef647046bb7608f596cd17443d16aaa1e0fba9145fed3f7d081ac0e2dd20619764b59c2980121e20e2328926b0374c8d1b460b2e2f0ca9dfd
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^2.8.7":
   version: 2.8.7
   resolution: "prettier@npm:2.8.7"
@@ -5704,6 +5824,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-i18next@npm:^12.2.0":
+  version: 12.2.0
+  resolution: "react-i18next@npm:12.2.0"
+  dependencies:
+    "@babel/runtime": ^7.20.6
+    html-parse-stringify: ^3.0.1
+  peerDependencies:
+    i18next: ">= 19.0.0"
+    react: ">= 16.8.0"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: ed2d6a5bb6746c2ea25cca9531b400d62edef6479631c1113eb7a3c3f6b28d493492171d7dc6d87f61a7d7e9b21d4be3bd7eaf0f7af00392fb546d8c50267345
+  languageName: node
+  linkType: hard
+
 "react-icons@npm:^4.8.0":
   version: 4.8.0
   resolution: "react-icons@npm:4.8.0"
@@ -5717,6 +5855,13 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
+"react-property@npm:2.0.0":
+  version: 2.0.0
+  resolution: "react-property@npm:2.0.0"
+  checksum: 8a444df30ef0937689c7968dae2501a0ca523777169f450e1f7ef5beeb855d6509bd058bf612f6ed8f459aa35468335d356e50264492e1938586e59fdb988262
   languageName: node
   linkType: hard
 
@@ -6206,6 +6351,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"style-to-js@npm:1.1.3":
+  version: 1.1.3
+  resolution: "style-to-js@npm:1.1.3"
+  dependencies:
+    style-to-object: 0.4.1
+  checksum: 7aaeacff909d43bbfc28e9a004019224d0eda895ac3d0d9f3160b6ad044dca8d3965f7b2b92ac649f63f62889324b560147d21cf3149f29794692c5d7b207110
+  languageName: node
+  linkType: hard
+
+"style-to-object@npm:0.4.1":
+  version: 0.4.1
+  resolution: "style-to-object@npm:0.4.1"
+  dependencies:
+    inline-style-parser: 0.1.1
+  checksum: 2ea213e98eed21764ae1d1dc9359231a9f2d480d6ba55344c4c15eb275f0809f1845786e66d4caf62414a5cc8f112ce9425a58d251c77224060373e0db48f8c2
+  languageName: node
+  linkType: hard
+
 "styled-jsx@npm:5.1.1":
   version: 5.1.1
   resolution: "styled-jsx@npm:5.1.1"
@@ -6586,6 +6749,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"void-elements@npm:3.1.0":
+  version: 3.1.0
+  resolution: "void-elements@npm:3.1.0"
+  checksum: 0390f818107fa8fce55bb0a5c3f661056001c1d5a2a48c28d582d4d847347c2ab5b7f8272314cac58acf62345126b6b09bea623a185935f6b1c3bbce0dfd7f7f
+  languageName: node
+  linkType: hard
+
 "watchlab-client@workspace:.":
   version: 0.0.0-use.local
   resolution: "watchlab-client@workspace:."
@@ -6616,12 +6786,18 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-simple-import-sort: ^10.0.0
     eslint-plugin-unused-imports: ^2.0.0
+    fuse.js: ^6.6.2
+    html-react-parser: ^3.0.15
+    i18next: ^22.4.13
     jotai: ^2.0.3
     next: 13.2.4
+    next-i18next: ^13.2.2
     postcss: ^8.4.21
     prettier: ^2.8.7
+    prettier-plugin-twin.macro: ^1.0.11
     react: 18.2.0
     react-dom: 18.2.0
+    react-i18next: ^12.2.0
     react-icons: ^4.8.0
     tailwindcss: ^3.2.7
     twin.macro: ^3.1.0

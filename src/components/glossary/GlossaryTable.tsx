@@ -45,7 +45,7 @@ const GlossaryTable = () => {
     <Table
       ref={tableRef}
       css={[
-        tw`absolute top-full`,
+        tw`absolute top-full font-cormor`,
         css`
           width: 1000px;
           height: calc(95vh - 470px);

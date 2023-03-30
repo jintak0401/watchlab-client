@@ -4,8 +4,7 @@ import { GlossaryChar, Word } from '@/types';
 
 const options = {
   shouldSort: true,
-  includeMatches: true,
-  minMatchCharLength: 3,
+  minMatchCharLength: 1,
   threshold: 0.3,
   fieldNormWeight: 1.5,
 };

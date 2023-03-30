@@ -7,7 +7,7 @@ interface Props extends PropsWithTw {
 }
 const Row = ({ word, description, ...rest }: Props) => {
   return (
-    <tr tw="border-gray-900 border-b bg-glossary-table text-gray-900" {...rest}>
+    <tr tw="border-gray-900 border-t bg-glossary-table text-gray-900" {...rest}>
       <th
         scope="row"
         tw="whitespace-nowrap border-gray-800 border-r px-4 font-bold text-3xl"

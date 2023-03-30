@@ -14,7 +14,7 @@ import {
   glossaryTableAtom,
 } from '@/store/glossary';
 import { Word } from '@/types';
-import { fuzzySearch } from '@/utils/fuzzy';
+import { fuzzySearch } from '@/utils/filterWords';
 
 const InputSearch = () => {
   const { locale = 'en' } = useRouter();

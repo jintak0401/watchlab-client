@@ -1,4 +1,5 @@
 const withTwin = require('./withTwin.js');
+const { i18n } = require('./next-i18next.config');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withTwin({
@@ -14,11 +15,7 @@ const nextConfig = withTwin({
   images: {
     domains: ['lh3.googleusercontent.com', 'watchlab-s3.s3.amazonaws.com'],
   },
-  i18n: {
-    locales: ['en', 'ko', 'jp', 'zh'],
-    defaultLocale: 'en',
-    localeDetection: false,
-  },
+  i18n,
 });
 
 module.exports = nextConfig;

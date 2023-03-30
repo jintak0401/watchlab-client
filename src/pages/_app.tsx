@@ -1,7 +1,9 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'jotai';
 import type { AppProps } from 'next/app';
+import { appWithTranslation } from 'next-i18next';
 
+import { cormorantGaramond } from '@/styles/font';
 import GlobalStyles from '@/styles/GlobalStyles';
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -10,10 +12,12 @@ const App = ({ Component, pageProps }: AppProps) => {
     <Provider>
       <QueryClientProvider client={queryClient}>
         <GlobalStyles />
-        <Component {...pageProps} />
+        <main className={`${cormorantGaramond.variable} font-sans`}>
+          <Component classNam {...pageProps} />
+        </main>
       </QueryClientProvider>
     </Provider>
   );
 };
 
-export default App;
+export default appWithTranslation(App);

@@ -5370,6 +5370,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-themes@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "next-themes@npm:0.2.1"
+  peerDependencies:
+    next: "*"
+    react: "*"
+    react-dom: "*"
+  checksum: ebc248b956138e73436c4ed0a0f0a877a0a48a33156db577029b8b8469e48b5c777d61abf2baeb75953378febea74e067a4869ff90b4a3e94fce123289b862ba
+  languageName: node
+  linkType: hard
+
 "next@npm:13.2.4":
   version: 13.2.4
   resolution: "next@npm:13.2.4"
@@ -7091,6 +7102,7 @@ __metadata:
     jotai: ^2.0.3
     next: 13.2.4
     next-i18next: ^13.2.2
+    next-themes: ^0.2.1
     postcss: ^8.4.21
     prettier: ^2.8.7
     prettier-plugin-twin.macro: ^1.0.11

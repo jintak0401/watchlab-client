@@ -86,7 +86,7 @@ const CharPicker = () => {
 
     window.addEventListener('resize', onResize);
 
-    const timeout = setTimeout(() => move(picker, ghostFace), 10);
+    const timeout = setTimeout(() => move(picker, ghostFace), 50);
 
     return () => {
       window.removeEventListener('resize', onResize);
@@ -104,7 +104,7 @@ const CharPicker = () => {
   return (
     <div
       css={[
-        tw`my-4 flex flex-row items-center justify-between gap-2 text-white text-4xl`,
+        tw`my-4 flex flex-row items-center justify-between gap-2 font-cormor text-white text-4xl`,
         { width: 1300 },
       ]}
     >

@@ -47,8 +47,8 @@ const InputSearch = () => {
       </div>
       <input
         css={[
-          tw`h-20 border-white border-y-4 border-x-8 bg-transparent pl-20 text-white text-3xl placeholder-gray-300 outline-none`,
-          { width: 1000 },
+          tw`h-20 border-white border-y-4 border-x-8 bg-transparent pl-20 text-white text-3xl outline-none placeholder:(text-gray-300 italic)`,
+          { width: 700 },
         ]}
         type="text"
         value={search}

@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes';
 
-import { cormorantGaramond } from '@/styles/font';
+import { cormorantGaramond, crimsonText, inknutAntiqua } from '@/styles/font';
 import GlobalStyles from '@/styles/GlobalStyles';
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -19,7 +19,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           defaultTheme={metadata.theme}
           enableColorScheme={false}
         >
-          <main className={`${cormorantGaramond.variable} font-sans`}>
+          <main
+            className={`${cormorantGaramond.variable} ${crimsonText.variable} ${inknutAntiqua.variable} font-sans`}
+          >
             <Component classNam {...pageProps} />
           </main>
         </ThemeProvider>

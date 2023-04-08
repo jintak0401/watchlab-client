@@ -15,7 +15,9 @@ module.exports = {
         'glossary-table': '#e2d1d1',
       },
       fontFamily: {
-        cormor: ['var(--font-cormorant-garamond)', ...fontFamily.sans],
+        cormor: ['var(--font-cormorant-garamond)', ...fontFamily.serif],
+        crimson: ['var(--font-crimson-text)', ...fontFamily.serif],
+        inknut: ['var(--font-inknut-antiqua)', ...fontFamily.serif],
       },
       backgroundImage: {
         glossary: "url('/static/images/glossary/background.webp')",

@@ -12,15 +12,18 @@ const Row = ({ word, description, ...rest }: Props) => {
       <th
         scope="row"
         css={[
-          tw`border-gray-800 border-r px-4 font-bold text-3xl`,
+          tw`border-gray-800 border-r p-4 font-bold leading-10`,
           css`
             width: 250px;
+            font-size: 40px;
           `,
         ]}
       >
         {word}
       </th>
-      <td tw="px-4 py-4 font-semibold text-xl">{description}</td>
+      <td tw="px-4 py-4 font-normal leading-9" css={{ fontSize: 30 }}>
+        {description}
+      </td>
     </tr>
   );
 };

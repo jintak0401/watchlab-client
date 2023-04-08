@@ -20,6 +20,7 @@ declare module 'react' {
   type PropsWithTw = {
     tw?: string;
     css?: CSSInterpolation;
+    className?: string;
   };
 
   type PropsWithTwChildren = PropsWithChildren & PropsWithTw;

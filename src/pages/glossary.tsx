@@ -63,7 +63,7 @@ const GlossaryPage = () => {
     <GlossaryWrapper>
       <div
         css={[
-          tw`absolute top-1/2 flex -translate-y-1/2 flex-col items-center justify-center gap-y-6`,
+          tw`absolute top-1/2 flex -translate-y-1/2 flex-col items-center justify-center gap-y-8`,
           css`
             transition: top 0.8s ease-in-out;
           `,
@@ -73,8 +73,18 @@ const GlossaryPage = () => {
             `,
         ]}
       >
-        <h1 tw="font-cormor font-bold text-8xl text-white">{t('title')}</h1>
-        <h2 tw="font-cormor text-3xl text-white">{t('description')}</h2>
+        <h1
+          tw="font-crimson font-bold text-white leading-none"
+          css={{ fontSize: 100 }}
+        >
+          {t('title')}
+        </h1>
+        <h2
+          tw="font-crimson text-white italic leading-none"
+          css={{ fontSize: 40 }}
+        >
+          {t('description')}
+        </h2>
         <InputSearch />
         <CharPicker />
       </div>

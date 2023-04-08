@@ -103,8 +103,8 @@ const CharPicker = () => {
   return (
     <div
       css={[
-        tw`my-4 flex flex-row items-center justify-between gap-2 font-cormor text-white text-4xl`,
-        { width: 1300 },
+        tw`flex flex-row items-center justify-between gap-2 font-cormor text-white leading-none`,
+        { width: 1000, fontSize: 30 },
       ]}
     >
       <NextImage
@@ -113,12 +113,12 @@ const CharPicker = () => {
         css={[tw`pointer-events-none absolute`, { left: -100 }]}
         src={metadata.images.ghostFace}
         alt={'ghost-face'}
-        width={100}
-        height={100}
+        width={70}
+        height={70}
       />
       {(glossaryChars as GlossaryChar[]).map((char: GlossaryChar) => (
         <button
-          tw="block w-full"
+          tw="block w-full font-inknut leading-none"
           key={char}
           ref={(el) => (alphabetRefs.current[char] = el)}
           onClick={() => {

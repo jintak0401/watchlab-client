@@ -16,6 +16,9 @@ const metadata = {
       'art',
     ],
   },
+  manual: {
+    links: ['beginner', 'buyer', 'user', 'maintenance'],
+  },
   theme: 'light',
 };
 

@@ -24,6 +24,7 @@ module.exports = {
       backgroundImage: {
         glossary: "url('/static/images/glossary/background.webp')",
         study: "url('/static/images/study/background.webp')",
+        manual: "url('/static/images/manual/background.webp')",
       },
     },
   },

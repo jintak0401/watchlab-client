@@ -18,13 +18,12 @@ const Row = ({ word, description, className }: Props) => {
 const TR = tw.tr`border-gray-900 border-t bg-glossary-table text-gray-900`;
 
 const TH = styled.th(() => [
-  tw`border-gray-800 border-r p-4 font-bold leading-10`,
+  tw`border-gray-800 border-r p-4 font-bold text-3xl`,
   css`
     width: 250px;
-    font-size: 40px;
   `,
 ]);
 
-const TD = tw.td`px-4 py-4 font-normal text-3xl`;
+const TD = tw.td`px-4 py-4 font-normal text-2xl`;
 
 export default Row;

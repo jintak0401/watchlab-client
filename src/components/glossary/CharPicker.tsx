@@ -103,8 +103,8 @@ const CharPicker = () => {
   return (
     <div
       css={[
-        tw`flex flex-row items-center justify-between gap-2 font-cormor text-white leading-none`,
-        { width: 1000, fontSize: 30 },
+        tw`mt-4 flex flex-row items-center justify-between gap-2 font-cormor text-white text-3xl`,
+        { width: 1000 },
       ]}
     >
       <NextImage

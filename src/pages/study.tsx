@@ -29,7 +29,7 @@ const StudyPage = () => {
   const links = metadata.study.links;
 
   return (
-    <StudyWrapper css={{ paddingTop: 200 }}>
+    <StudyWrapper css={{ paddingTop: 200, paddingBottom: 100 }}>
       <div tw="flex flex-col items-center justify-center" css={{ rowGap: 30 }}>
         <Title>{t('title')}</Title>
         <Subtitle>{t('subtitle')}</Subtitle>

@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { useAtom } from 'jotai';
 import React, { useEffect, useRef } from 'react';
 import tw, { css } from 'twin.macro';
@@ -20,24 +21,15 @@ const GlossaryTable = () => {
   }, [filteredWords]);
 
   return (
-    <Table
+    <TableWrapper
       ref={tableRef}
-      css={[
-        tw`absolute top-full font-cormor`,
-        css`
-          width: 1000px;
-          height: calc(95vh - 470px);
-          overflow-y: auto;
-          &::-webkit-scrollbar {
-            display: none;
-          }
-        `,
+      css={
         tableShow &&
-          css`
-            transition: top 0.8s ease-in-out;
-            top: 470px;
-          `,
-      ]}
+        css`
+          transition: top 0.8s ease-in-out;
+          top: 470px;
+        `
+      }
     >
       {filteredWords?.map((word, idx) => {
         const { word: _word, description } = instanceOfWord(word)
@@ -53,8 +45,20 @@ const GlossaryTable = () => {
           />
         );
       })}
-    </Table>
+    </TableWrapper>
   );
 };
+
+const TableWrapper = styled(Table)(() => [
+  tw`absolute top-full font-cormor`,
+  css`
+    width: 1000px;
+    height: calc(95vh - 470px);
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  `,
+]);
 
 export default GlossaryTable;

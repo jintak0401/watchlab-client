@@ -3,7 +3,7 @@ import { GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import 'twin.macro';
+import tw from 'twin.macro';
 
 import { Description, Grid, Subtitle, Title } from '@/components/common';
 import Cell from '@/components/study/Cell';
@@ -30,12 +30,12 @@ const StudyPage = () => {
 
   return (
     <StudyWrapper css={{ paddingTop: 200, paddingBottom: 100 }}>
-      <div tw="flex flex-col items-center justify-center" css={{ rowGap: 30 }}>
+      <StudyHeader>
         <Title>{t('title')}</Title>
         <Subtitle>{t('subtitle')}</Subtitle>
         <Description>{t('description')}</Description>
-      </div>
-      <Grid css={{ marginTop: 60 }} row={2} col={3}>
+      </StudyHeader>
+      <Grid tw="mt-16" row={2} col={3}>
         {links.map((key) => (
           <Cell
             key={key}
@@ -49,5 +49,7 @@ const StudyPage = () => {
     </StudyWrapper>
   );
 };
+
+const StudyHeader = tw.div`flex flex-col items-center justify-center gap-y-8`;
 
 export default StudyPage;

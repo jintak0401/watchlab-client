@@ -2,7 +2,7 @@ const metadata = {
   images: {
     studyBg: '/static/images/study/background.webp',
     glossaryBg: '/static/images/glossary/background.webp',
-    ghostFace: '/static/images/glossary/ghost-face.webp',
+    ghostFace: '/static/images/glossary/ghost-face-origin.png',
     loupes: '/static/images/glossary/loupes.webp',
   },
 

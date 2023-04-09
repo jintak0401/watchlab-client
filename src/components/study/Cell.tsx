@@ -15,7 +15,7 @@ interface Props extends PropsWithTwChildren {
 const Cell = ({ href, title, description, image }: Props) => {
   return (
     <Link
-      tw="flex flex-col items-center gap-4 bg-study-cell p-2 text-center transition-transform hover:-translate-y-2"
+      tw="flex flex-col items-center gap-4 rounded-md bg-study-cell p-2 text-center transition-transform hover:-translate-y-2"
       css={{ width: 400, height: 360 }}
       href={href}
     >

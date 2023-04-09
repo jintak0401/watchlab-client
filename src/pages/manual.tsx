@@ -38,7 +38,7 @@ const ManualPage = () => {
         {links.map((key) => (
           <Cell
             key={key}
-            tw="h-96"
+            css={{ height: 500 }}
             href={`/manual/${key}`}
             title={t(`${key}.title`)}
             description={t(`${key}.description`)}

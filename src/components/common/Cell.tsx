@@ -28,7 +28,7 @@ const Cell = ({ href, title, description, image, className }: Props) => {
 };
 
 const CellTitle = styled.h3(() => [
-  tw`font-crimson-pro font-bold text-5xl`,
+  tw`px-3 font-crimson-pro font-bold text-5xl`,
   tw`leading-none`,
 ]);
 

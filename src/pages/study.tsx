@@ -5,8 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import tw from 'twin.macro';
 
-import { Description, Grid, Subtitle, Title } from '@/components/common';
-import Cell from '@/components/study/Cell';
+import { Cell, Description, Grid, Subtitle, Title } from '@/components/common';
 import StudyWrapper from '@/components/study/Wrapper';
 
 export const getServerSideProps = async (

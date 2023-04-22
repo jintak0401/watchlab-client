@@ -35,14 +35,14 @@ const ManualPage = () => {
         <Description>{t('description')}</Description>
       </ManualHeader>
       <Grid tw="mt-16" row={1} col={4}>
-        {links.map((key) => (
+        {links.map((key, idx) => (
           <Cell
             key={key}
             css={{ height: 500 }}
             href={`/manual/${key}`}
             title={t(`${key}.title`)}
             description={t(`${key}.description`)}
-            image={'/static/images/manual/sample.png'}
+            image={metadata.images.manuals[idx]}
           />
         ))}
       </Grid>

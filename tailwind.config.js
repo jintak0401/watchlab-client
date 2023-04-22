@@ -16,10 +16,12 @@ module.exports = {
         'study-cell': '#cdb5b6',
       },
       fontFamily: {
+        serif: ['var(--font-libre-baskerville)', ...fontFamily.serif],
         cormor: ['var(--font-cormorant-garamond)', ...fontFamily.serif],
         crimson: ['var(--font-crimson-text)', ...fontFamily.serif],
         'crimson-pro': ['var(--font-crimson-pro)', ...fontFamily.serif],
         inknut: ['var(--font-inknut-antiqua)', ...fontFamily.serif],
+        della: ['var(--font-della-respira)', ...fontFamily.serif],
       },
       backgroundImage: {
         glossary: "url('/static/images/glossary/background.webp')",

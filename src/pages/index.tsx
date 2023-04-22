@@ -1,6 +1,5 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { GetServerSidePropsContext } from 'next';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import tw from 'twin.macro';
@@ -14,19 +13,6 @@ export const getServerSideProps = async (
   const queryClient = new QueryClient();
   const { locale = 'en' } = context;
 
-  /*
-  await queryClient.prefetchQuery(getGlossaryKey(locale), () =>
-    getGlossary(locale)
-  );
-
-  const [translations] = await Promise.all([
-    serverSideTranslations(locale, ['journal']),
-    queryClient.prefetchQuery(getGlossaryKey(locale), () =>
-      getGlossary(locale)
-    ),
-  ]);
-*/
-
   const translations = await serverSideTranslations(locale, ['journal']);
 
   return {
@@ -38,7 +24,6 @@ export const getServerSideProps = async (
 };
 
 const Index = () => {
-  const { locale = 'en' } = useRouter();
   const { t } = useTranslation('journal');
 
   return (

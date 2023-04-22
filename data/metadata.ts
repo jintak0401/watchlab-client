@@ -4,8 +4,10 @@ const metadata = {
     glossaryBg: '/static/images/glossary/background.webp',
     ghostFace: '/static/images/glossary/ghost-face-origin.png',
     loupes: '/static/images/glossary/loupes.webp',
+    logo: '/static/images/common/logo.webp',
+    light: '/static/images/common/light.webp',
+    dark: '/static/images/common/dark.webp',
   },
-
   study: {
     links: [
       'components',

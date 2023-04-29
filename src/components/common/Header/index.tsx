@@ -35,8 +35,9 @@ const Header = () => {
           <NextImage
             src={metadata.images.logo}
             alt={'logo'}
-            width={150}
-            height={150}
+            tw="my-3"
+            width={130}
+            height={130}
           />
         </Link>
         <ButtonList />
@@ -65,7 +66,7 @@ const Header = () => {
         <ul tw="flex items-center justify-center gap-10">
           {navLinks[locale as keyof typeof navLinks].map(({ name, href }) => (
             <li key={name}>
-              <Link tw="font-della text-3xl" href={href}>
+              <Link tw="font-della text-2xl" href={href}>
                 {name}
               </Link>
             </li>

@@ -9,12 +9,20 @@ import {
   cormorantGaramond,
   crimsonPro,
   crimsonText,
+  della,
   inknutAntiqua,
+  libre,
 } from '@/styles/font';
 import GlobalStyles from '@/styles/GlobalStyles';
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 1000 * 60 * 5,
+      },
+    },
+  });
   return (
     <Provider>
       <QueryClientProvider client={queryClient}>
@@ -25,7 +33,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           enableColorScheme={false}
         >
           <main
-            className={`${cormorantGaramond.variable} ${crimsonText.variable} ${inknutAntiqua.variable} ${crimsonPro.variable} font-sans`}
+            className={`${cormorantGaramond.variable} ${crimsonText.variable} ${inknutAntiqua.variable} ${crimsonPro.variable} ${libre.variable} ${della.variable} font-sans-serif`}
           >
             <Component classNam {...pageProps} />
           </main>

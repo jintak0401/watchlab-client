@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { PropsWithTwChildren } from 'react';
 import tw from 'twin.macro';
 
@@ -8,8 +7,6 @@ const Description = ({ children, className }: Props) => {
   return <DIV className={className}>{children}</DIV>;
 };
 
-const DIV = styled.div(() => [
-  tw`whitespace-pre-line text-center font-normal text-white text-3xl`,
-]);
+const DIV = tw.div`whitespace-pre-line text-center font-normal text-white text-2xl`;
 
 export default Description;

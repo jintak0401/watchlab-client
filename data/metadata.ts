@@ -7,6 +7,12 @@ const metadata = {
     logo: '/static/images/common/logo.webp',
     light: '/static/images/common/light.webp',
     dark: '/static/images/common/dark.webp',
+    clock: {
+      plate: '/static/images/common/clock/plate.png',
+      hourHand: '/static/images/common/clock/hour.png',
+      minuteHand: '/static/images/common/clock/minute.png',
+      secondHand: '/static/images/common/clock/second.png',
+    },
     study: [
       '/static/images/study/10-1.png',
       '/static/images/study/10-2.png',

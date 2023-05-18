@@ -13,12 +13,19 @@ import { CLOCK_SIZE } from '@/utils/constants';
 
 const HeaderMain = () => {
   const [openClockCollapse, setOpenClockCollapse] = useState(false);
-  const [showClock, setShowClock] = useState(false);
+  const [showClock, setShowClock] = useState(true);
   const timeout = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
+    const clockTimeout = setTimeout(() => {
+      setOpenClockCollapse((opened) => {
+        if (!opened) setShowClock(false);
+        return opened;
+      });
+    }, 5000);
     return () => {
       timeout.current && clearTimeout(timeout.current);
+      clearTimeout(clockTimeout);
     };
   }, []);
 

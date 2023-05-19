@@ -17,6 +17,10 @@ const Clock = () => {
     second
   );
 
+  console.log(`${hour}:${minute}:${second}`);
+  console.log(`${hourRotate}, ${minuteRotate}, ${secondRotate}`);
+  console.log('----------------------');
+
   return (
     <Container>
       <NextImage
@@ -62,7 +66,7 @@ const getClockHandStyle = (rotate: number, handSize = CLOCK_SIZE - 30) => [
   css`
     height: ${handSize}px;
     top: 50%;
-    // 중앙을 중심으로 회전
+    transition: transform 0.5s;
     transform-origin: 50% 0;
     transform: rotate(${rotate}deg) translateY(-50%);
   `,

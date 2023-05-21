@@ -17,21 +17,18 @@ const ANIMATION: { [key in THandType]: string } = {
 
 const Clock = () => {
   const { plate, hourHand, minuteHand, secondHand } = metadata.images.clock;
-  const [date, setDate] = useState(new Date(0));
+  const [date, setDate] = useState(new Date());
   const [hourAngle, minuteAngle, secondAngle] = calcClockRotate(
     date.getHours(),
     date.getMinutes(),
     date.getSeconds()
   );
 
-  console.log(hourAngle, minuteAngle, secondAngle);
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       const newDate = new Date();
       setDate(newDate);
-      console.log(newDate);
-    }, 1000);
+    }, 0);
     return () => {
       clearTimeout(timeout);
     };

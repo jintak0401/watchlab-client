@@ -1,9 +1,8 @@
 import { keyframes } from '@emotion/react';
-import styled from '@emotion/styled';
 import metadata from 'data/metadata';
 import NextImage from 'next/image';
 import { useEffect, useState } from 'react';
-import tw, { css } from 'twin.macro';
+import tw, { css, styled } from 'twin.macro';
 
 import { CLOCK_SIZE } from '@/utils/constants';
 import { calcClockRotate } from '@/utils/time';
@@ -18,7 +17,7 @@ const ANIMATION: { [key in THandType]: string } = {
 
 const Clock = () => {
   const { plate, hourHand, minuteHand, secondHand } = metadata.images.clock;
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date(0));
   const [hourAngle, minuteAngle, secondAngle] = calcClockRotate(
     date.getHours(),
     date.getMinutes(),
@@ -28,9 +27,14 @@ const Clock = () => {
   console.log(hourAngle, minuteAngle, secondAngle);
 
   useEffect(() => {
-    const newDate = new Date();
-    setDate(newDate);
-    console.log(newDate);
+    const timeout = setTimeout(() => {
+      const newDate = new Date();
+      setDate(newDate);
+      console.log(newDate);
+    }, 1000);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
@@ -49,6 +53,7 @@ const Clock = () => {
         height={1000}
       />
       <NextImage
+        suppressHydrationWarning={true}
         css={getClockHandStyle('h', hourAngle, (CLOCK_SIZE * 2) / 3)}
         src={hourHand}
         alt={'hour'}
@@ -56,6 +61,7 @@ const Clock = () => {
         height={1000}
       />
       <NextImage
+        suppressHydrationWarning={true}
         css={getClockHandStyle('m', minuteAngle)}
         src={minuteHand}
         alt={'minute'}
@@ -63,6 +69,7 @@ const Clock = () => {
         height={1000}
       />
       <NextImage
+        suppressHydrationWarning={true}
         css={getClockHandStyle('s', secondAngle)}
         src={secondHand}
         alt={'second'}

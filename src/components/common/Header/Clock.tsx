@@ -28,7 +28,7 @@ const Clock = () => {
     const timeout = setTimeout(() => {
       const newDate = new Date();
       setDate(newDate);
-    }, 400);
+    }, 250);
     return () => {
       clearTimeout(timeout);
     };

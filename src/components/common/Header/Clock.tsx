@@ -2,6 +2,7 @@ import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import metadata from 'data/metadata';
 import NextImage from 'next/image';
+import { useEffect, useState } from 'react';
 import tw, { css } from 'twin.macro';
 
 import { CLOCK_SIZE } from '@/utils/constants';
@@ -17,15 +18,18 @@ const ANIMATION: { [key in THandType]: string } = {
 
 const Clock = () => {
   const { plate, hourHand, minuteHand, secondHand } = metadata.images.clock;
-  const date = (() => {
-    const d = new Date();
-    return new Date(Number(d) - d.getTimezoneOffset() * 60_000);
-  })();
+  const [date, setDate] = useState(new Date());
   const [hourAngle, minuteAngle, secondAngle] = calcClockRotate(
     date.getHours(),
     date.getMinutes(),
     date.getSeconds()
   );
+
+  useEffect(() => {
+    const newDate = new Date();
+    setDate(newDate);
+    console.log(newDate);
+  }, []);
 
   return (
     <Container>

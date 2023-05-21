@@ -25,6 +25,8 @@ const Clock = () => {
     date.getSeconds()
   );
 
+  console.log(hourAngle, minuteAngle, secondAngle);
+
   useEffect(() => {
     const newDate = new Date();
     setDate(newDate);

@@ -25,10 +25,11 @@ const Clock = () => {
   );
 
   useEffect(() => {
+    // this code is solving the problem of difference between server and client
     const timeout = setTimeout(() => {
       const newDate = new Date();
       setDate(newDate);
-    }, 250);
+    }, 200);
     return () => {
       clearTimeout(timeout);
     };

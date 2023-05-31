@@ -19,7 +19,7 @@ const ProfileList = ({ profilesProps = [] }: Props) => {
   return (
     <div
       css={[
-        tw`mx-auto grid grid-cols-5 items-center justify-center gap-5`,
+        tw`mx-auto mt-8 grid grid-cols-4 items-center justify-center gap-7`,
         { width: 1700 },
       ]}
     >

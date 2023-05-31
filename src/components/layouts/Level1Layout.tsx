@@ -13,7 +13,10 @@ const Level1Layout = ({ children, className, title, subtitle }: Props) => {
   return (
     <DefaultLayout>
       <div
-        css={[tw`w-full bg-cover bg-center bg-no-repeat`, { height: 350 }]}
+        css={[
+          tw`mx-auto w-full bg-cover bg-center bg-no-repeat`,
+          { height: 350 },
+        ]}
         className={className}
       >
         <div tw="flex h-full w-full flex-col items-center justify-end gap-6 bg-gradient-to-b from-transparent to-black pb-6">

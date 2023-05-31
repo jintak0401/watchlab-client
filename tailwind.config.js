@@ -14,6 +14,7 @@ module.exports = {
         ribbon: '#0047ff',
         'glossary-table': '#e2d1d1',
         'study-cell': '#cdb5b6',
+        cream: '#eeeae3',
       },
       fontFamily: {
         serif: ['var(--font-libre-baskerville)', ...fontFamily.serif],
@@ -27,6 +28,7 @@ module.exports = {
         glossary: "url('/static/images/glossary/background.webp')",
         study: "url('/static/images/study/background.webp')",
         manual: "url('/static/images/manual/background.webp')",
+        profiles: "url('/static/images/profiles/background.jpg')",
       },
     },
   },

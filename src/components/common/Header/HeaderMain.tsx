@@ -37,7 +37,7 @@ const HeaderMain = () => {
   );
 };
 
-const Upside = tw.div`flex w-full items-center justify-between px-10`;
+const Upside = tw.div`flex w-full items-center justify-between bg-white px-10`;
 
 const ClockCollapse = styled.div(({ open }: { open: boolean }) => [
   tw`flex w-full items-center justify-center overflow-hidden bg-orange-100`,

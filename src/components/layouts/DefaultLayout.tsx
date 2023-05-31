@@ -7,7 +7,7 @@ type Props = PropsWithChildren;
 
 const DefaultLayout = ({ children }: Props) => {
   return (
-    <div tw="min-h-screen bg-cream">
+    <div tw="min-h-screen bg-cream pb-10">
       <Header />
       {children}
     </div>

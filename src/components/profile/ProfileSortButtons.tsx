@@ -1,24 +1,19 @@
-import { atom, useAtomValue, useSetAtom } from 'jotai';
-import { useMemo } from 'react';
+import { useSetAtom } from 'jotai';
 import 'twin.macro';
 
-import { profileAtom } from '@/store/profile';
+import { profileSortAtom } from '@/store/profile';
 
 const ProfileSortButtons = () => {
-  const _profileAtom = useMemo(() => {
-    return atom((get) => get(profileAtom));
-  }, []);
-  const profiles = useAtomValue(_profileAtom);
-  const setProfiles = useSetAtom(profileAtom);
+  const setProfiles = useSetAtom(profileSortAtom);
 
   const sortAtoZ = () => {
-    setProfiles(profiles.sort((a, b) => a.name.localeCompare(b.name)));
+    setProfiles('a2z');
   };
   const sortZtoA = () => {
-    setProfiles(profiles.sort((a, b) => b.name.localeCompare(a.name)));
+    setProfiles('z2a');
   };
   const sortByEstablishedAt = () => {
-    setProfiles(profiles.sort((a, b) => a.establishedAt - b.establishedAt));
+    setProfiles('establishedAt');
   };
 
   const buttonsData = [

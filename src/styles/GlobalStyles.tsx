@@ -8,6 +8,11 @@ const customStyles = css({
   body: {
     ...tw`select-none overflow-x-hidden antialiased print:hidden`,
   },
+  '.pagebreak': {
+    height: 20,
+    width: 1800,
+    ...tw`bg-cream`,
+  },
 });
 
 const GlobalStyles = () => (

@@ -1,37 +1,26 @@
-import { atom, useAtomValue } from 'jotai';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { Fragment, useMemo } from 'react';
+import { Fragment } from 'react';
 import tw from 'twin.macro';
 import 'twin.macro';
 
-import { profileAtom } from '@/store/profile';
-import { Profile } from '@/types';
+import { useProfileQuery } from '@/hooks/rq/profile';
 
-interface Props {
-  profileProps: Profile[];
-}
+const ProfileChain = () => {
+  const { asPath, locale = 'en' } = useRouter();
+  const { data: profiles = [] } = useProfileQuery(locale);
 
-const ProfileChain = ({ profileProps = [] }: Props) => {
-  const { pathname } = useRouter();
-  const currentProfileSlug = pathname.split('/')[2];
-  const _profileAtom = useMemo(() => {
-    return atom((get) =>
-      get(profileAtom).sort((a, b) => a.name.localeCompare(b.name))
-    );
-  }, []);
-  const profileAtomValue = useAtomValue(_profileAtom);
-  const profiles = (
-    profileAtomValue.length > 0 ? profileAtomValue : profileProps
-  ).map(({ postSlug, name }) => (
-    <NextLink
-      css={postSlug === currentProfileSlug && tw`underline`}
-      href={postSlug}
-      key={name}
-    >
-      {name}
-    </NextLink>
-  ));
+  const profilesLinkArr = [...profiles]
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(({ postSlug, name }) => (
+      <NextLink
+        css={postSlug === asPath.slice(1) && tw`underline`}
+        href={`/${postSlug}`}
+        key={name}
+      >
+        {name}
+      </NextLink>
+    ));
 
   return (
     <div
@@ -40,7 +29,7 @@ const ProfileChain = ({ profileProps = [] }: Props) => {
         { maxWidth: 1500 },
       ]}
     >
-      {profiles.map((profile, idx) => (
+      {profilesLinkArr.map((profile, idx) => (
         <Fragment key={idx}>
           {idx > 0 && <span>-</span>}
           {profile}

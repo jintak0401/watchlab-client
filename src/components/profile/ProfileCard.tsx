@@ -18,7 +18,7 @@ const ProfileCard = ({
   emblem,
 }: Props) => {
   return (
-    <NextLink href={postSlug} tw={'inline-block w-full bg-white p-3'}>
+    <NextLink href={postSlug} tw={'inline-block h-full w-full bg-white p-3'}>
       <NextImage
         tw={'w-full aspect-[383/249]'}
         src={thumbnail}
@@ -30,7 +30,7 @@ const ProfileCard = ({
       <hr tw={'border-black'} />
       <div tw="flex items-center justify-between gap-1 text-xl italic">
         <div tw="flex-[3]">
-          <div tw="break-keep flex w-60 items-center py-2">{locate}</div>
+          <div tw="break-keep flex h-20 w-60 items-center">{locate}</div>
           <hr tw="mr-5 border-black" />
           <div tw="py-2">{establishedAt}</div>
         </div>

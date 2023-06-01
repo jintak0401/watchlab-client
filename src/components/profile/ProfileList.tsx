@@ -1,20 +1,32 @@
 import { useAtomValue } from 'jotai';
+import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import 'twin.macro';
 
-import { profileAtom } from '@/store/profile';
-import { Profile } from '@/types';
+import { useProfileQuery } from '@/hooks/rq/profile';
+
+import { profileSortAtom } from '@/store/profile';
+import { Profile, TPostSortBy } from '@/types';
 
 import ProfileCard from './ProfileCard';
 
-interface Props {
-  profilesProps: Profile[];
-}
+const SortCB = (sortBy: TPostSortBy) => {
+  if (sortBy === 'a2z') {
+    return (a: Profile, b: Profile) => a.name.localeCompare(b.name);
+  } else if (sortBy === 'z2a') {
+    return (a: Profile, b: Profile) => b.name.localeCompare(a.name);
+  } else if (sortBy === 'establishedAt') {
+    return (a: Profile, b: Profile) => a.establishedAt - b.establishedAt;
+  }
+  return () => 1;
+};
 
-const ProfileList = ({ profilesProps = [] }: Props) => {
-  const profileAtomValue = useAtomValue(profileAtom);
-  const profiles =
-    profileAtomValue.length > 0 ? profileAtomValue : profilesProps;
+const ProfileList = () => {
+  const { locale = 'en' } = useRouter();
+  const profileSortBy = useAtomValue(profileSortAtom);
+  const { data: _profiles = [] } = useProfileQuery(locale);
+
+  const profiles = _profiles.sort(SortCB(profileSortBy));
 
   return (
     <div

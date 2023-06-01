@@ -1,8 +1,7 @@
-import { useSetAtom } from 'jotai';
-import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import { dehydrate, QueryClient } from '@tanstack/react-query';
+import { GetStaticPropsContext } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useEffect } from 'react';
 import tw, { css } from 'twin.macro';
 
 import Level1Layout from '@/components/layouts/Level1Layout';
@@ -11,41 +10,34 @@ import ProfileList from '@/components/profile/ProfileList';
 import ProfileSortButtons from '@/components/profile/ProfileSortButtons';
 
 import { getProfile } from '@/request/profile';
-import { profileAtom } from '@/store/profile';
 import { PROFILE_KEY } from '@/utils/constants';
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const { locale = 'en' } = context;
+  const queryClient = new QueryClient();
 
-  const [translations, profiles] = await Promise.all([
+  const [translations] = await Promise.all([
     serverSideTranslations(locale, [PROFILE_KEY]),
-    getProfile(locale),
+    queryClient.prefetchQuery([PROFILE_KEY, locale], () => getProfile(locale)),
   ]);
 
   return {
     props: {
       ...translations,
-      profiles: profiles ?? [],
+      dehydratedState: dehydrate(queryClient),
     },
     revalidate: 10,
   };
 };
 
-const ProfilePage = ({
-  profiles,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const ProfilePage = () => {
   const { t } = useTranslation(PROFILE_KEY);
-  const setProfile = useSetAtom(profileAtom);
-
-  useEffect(() => {
-    setProfile(profiles);
-  }, []);
 
   return (
     <Level1Layout title={t('title')} subtitle={t('subtitle')} css={layoutStyle}>
-      <ProfileChain profileProps={profiles} />
+      <ProfileChain />
       <ProfileSortButtons />
-      <ProfileList profilesProps={profiles} />
+      <ProfileList />
     </Level1Layout>
   );
 };

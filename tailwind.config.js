@@ -16,6 +16,17 @@ module.exports = {
         'study-cell': '#cdb5b6',
         cream: '#eeeae3',
       },
+      keyframes: {
+        spin: {
+          '0%': { transform: 'rotateZ(0deg)' },
+          '100%': { transform: 'rotateZ(360deg)' },
+        },
+      },
+      animation: {
+        'spin-hour': 'spin 43200s linear infinite',
+        'spin-minute': 'spin 3600s linear infinite',
+        'spin-second': 'spin 60s linear infinite',
+      },
       fontFamily: {
         serif: ['var(--font-libre-baskerville)', ...fontFamily.serif],
         cormor: ['var(--font-cormorant-garamond)', ...fontFamily.serif],

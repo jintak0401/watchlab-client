@@ -14,6 +14,8 @@ import {
 } from '@/styles/font';
 import GlobalStyles from '@/styles/GlobalStyles';
 
+import StyledComponentsRegistry from './registry';
+
 import { Locale } from '~/i18n-config';
 
 interface Props {
@@ -39,7 +41,7 @@ const ClientLayout = ({ lang, children }: Props) => {
         className={`${cormorantGaramond.variable} ${crimsonText.variable} ${inknutAntiqua.variable} ${crimsonPro.variable} ${libre.variable} ${della.variable} font-sans-serif`}
       >
         <QueryClientProvider client={queryClient}>
-          {children}
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
           <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </body>

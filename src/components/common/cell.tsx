@@ -1,8 +1,7 @@
-import styled from '@emotion/styled';
 import NextImage from 'next/image';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { PropsWithTw } from 'react';
-import tw from 'twin.macro';
+import tw, { styled } from 'twin.macro';
 import 'twin.macro';
 
 interface Props extends PropsWithTw {
@@ -14,16 +13,18 @@ interface Props extends PropsWithTw {
 
 const Cell = ({ href, title, description, image, className }: Props) => {
   return (
-    <Link
-      tw="flex flex-col items-center gap-4 rounded-md bg-study-cell p-2 text-center transition-transform hover:-translate-y-2"
-      css={{ width: 400, height: 360 }}
+    <NextLink
+      css={[
+        { width: 400, height: 360 },
+        tw`flex flex-col items-center gap-4 rounded-md bg-study-cell p-2 text-center transition-transform hover:-translate-y-2`,
+      ]}
       href={href}
       className={className}
     >
       <CellTitle>{title}</CellTitle>
       <NextImage src={image} alt={title} width={150} height={150} />
       <CellDesc>{description}</CellDesc>
-    </Link>
+    </NextLink>
   );
 };
 

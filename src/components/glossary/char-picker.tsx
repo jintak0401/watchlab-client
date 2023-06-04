@@ -1,3 +1,5 @@
+'use client';
+
 import siteMetadata from 'data/site-metadata';
 import { useAtom } from 'jotai';
 import NextImage from 'next/image';

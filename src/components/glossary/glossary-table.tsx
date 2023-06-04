@@ -5,7 +5,7 @@ import tw, { css, styled } from 'twin.macro';
 import Row from '@/components/glossary/Table/row';
 
 import { glossaryFilteredWordsAtom, glossaryTableAtom } from '@/store/glossary';
-import { instanceOfWord } from '@/types';
+import { instanceOfWord } from '@/utils/word';
 
 import Table from './Table/table';
 

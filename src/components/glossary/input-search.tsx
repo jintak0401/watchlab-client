@@ -1,8 +1,11 @@
+'use client';
+
 import siteMetadata from 'data/site-metadata';
 import { useAtom } from 'jotai';
 import NextImage from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
+import { ChangeEvent } from 'react';
 import tw from 'twin.macro';
 
 import { useGlossaryQuery } from '@/hooks/rq/glossary';
@@ -52,7 +55,7 @@ const InputSearch = () => {
         ]}
         type="text"
         value={search}
-        onChange={(e) => {
+        onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setSearch(e.target.value);
           debounceFilter(e.target.value);
         }}

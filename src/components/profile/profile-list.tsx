@@ -1,14 +1,15 @@
+'use client';
 import { useAtomValue } from 'jotai';
-import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import 'twin.macro';
 
 import { useProfileQuery } from '@/hooks/rq/profile';
+import useLocale from '@/hooks/use-locale';
 
 import { profileSortAtom } from '@/store/profile';
 import { Profile, TPostSortBy } from '@/types';
 
-import ProfileCard from './ProfileCard';
+import ProfileCard from './profile-card';
 
 const SortCB = (sortBy: TPostSortBy) => {
   if (sortBy === 'a2z') {
@@ -22,7 +23,7 @@ const SortCB = (sortBy: TPostSortBy) => {
 };
 
 const ProfileList = () => {
-  const { locale = 'en' } = useRouter();
+  const locale = useLocale();
   const profileSortBy = useAtomValue(profileSortAtom);
   const { data: _profiles = [] } = useProfileQuery(locale);
 

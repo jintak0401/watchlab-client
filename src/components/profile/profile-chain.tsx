@@ -1,20 +1,24 @@
+'use client';
+
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
 import tw from 'twin.macro';
 import 'twin.macro';
 
 import { useProfileQuery } from '@/hooks/rq/profile';
+import useLocale from '@/hooks/use-locale';
 
 const ProfileChain = () => {
-  const { asPath, locale = 'en' } = useRouter();
+  const locale = useLocale();
+  const pathname = usePathname();
   const { data: profiles = [] } = useProfileQuery(locale);
 
   const profilesLinkArr = [...profiles]
     .sort((a, b) => a.name.localeCompare(b.name))
     .map(({ postSlug, name }) => (
       <NextLink
-        css={postSlug === asPath.slice(1) && tw`underline`}
+        css={[postSlug === pathname.slice(1) && tw`hover:underline`]}
         href={`/${postSlug}`}
         key={name}
       >

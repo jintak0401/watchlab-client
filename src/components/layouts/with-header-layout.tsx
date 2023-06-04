@@ -1,3 +1,5 @@
+'use client';
+
 import { PropsWithChildren } from 'react';
 import 'twin.macro';
 
@@ -5,7 +7,7 @@ import Header from '@/components/common/Header';
 
 type Props = PropsWithChildren;
 
-const DefaultLayout = ({ children }: Props) => {
+const WithHeaderLayout = ({ children }: Props) => {
   return (
     <div tw="min-h-screen bg-cream pb-10">
       <Header />
@@ -14,4 +16,4 @@ const DefaultLayout = ({ children }: Props) => {
   );
 };
 
-export default DefaultLayout;
+export default WithHeaderLayout;

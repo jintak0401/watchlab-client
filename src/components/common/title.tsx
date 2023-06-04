@@ -1,3 +1,5 @@
+'use client';
+
 import tw, { styled } from 'twin.macro';
 
 const Title = styled.h1(() => [

@@ -3,7 +3,7 @@
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 import { CSSProperties, PropsWithTw } from 'react';
-import tw, { styled } from 'twin.macro';
+import tw, { css, styled } from 'twin.macro';
 import 'twin.macro';
 
 interface Props extends PropsWithTw {
@@ -18,8 +18,8 @@ const Cell = ({ href, title, description, image, className, style }: Props) => {
   return (
     <NextLink
       css={[
-        { width: 400 },
-        tw`flex h-full flex-col items-center gap-4 rounded-md bg-study-cell p-2 text-center transition-transform hover:-translate-y-2`,
+        cellContainerStyle,
+        tw`flex flex-col items-center gap-4 rounded-md bg-study-cell p-2 text-center transition-transform`,
       ]}
       href={href}
       className={className}
@@ -31,6 +31,14 @@ const Cell = ({ href, title, description, image, className, style }: Props) => {
     </NextLink>
   );
 };
+
+const cellContainerStyle = css`
+  width: 400px;
+  height: 360px;
+  &:hover {
+    transform: translateY(-16px);
+  }
+`;
 
 const CellTitle = styled.h3(() => [
   tw`px-3 font-crimson-pro font-bold text-5xl`,

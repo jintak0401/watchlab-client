@@ -35,17 +35,19 @@ const ClientLayout = ({ lang, children }: Props) => {
       })
   );
   return (
-    <html lang={lang}>
+    <StyledComponentsRegistry>
       <GlobalStyles />
-      <body
-        className={`${cormorantGaramond.variable} ${crimsonText.variable} ${inknutAntiqua.variable} ${crimsonPro.variable} ${libre.variable} ${della.variable} font-sans-serif`}
-      >
-        <QueryClientProvider client={queryClient}>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-          <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
-      </body>
-    </html>
+      <html lang={lang}>
+        <body
+          className={`${cormorantGaramond.variable} ${crimsonText.variable} ${inknutAntiqua.variable} ${crimsonPro.variable} ${libre.variable} ${della.variable} font-sans-serif`}
+        >
+          <QueryClientProvider client={queryClient}>
+            {children}
+            <ReactQueryDevtools initialIsOpen={false} />
+          </QueryClientProvider>
+        </body>
+      </html>
+    </StyledComponentsRegistry>
   );
 };
 

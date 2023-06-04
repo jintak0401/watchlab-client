@@ -1,12 +1,13 @@
-import styled from '@emotion/styled';
+'use client';
+
 import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useState } from 'react';
-import tw, { css } from 'twin.macro';
+import tw, { css, styled } from 'twin.macro';
 
 import ButtonList from '@/components/common/Header/ButtonList';
-import Clock from '@/components/common/Header/Clock';
+import Clock from '@/components/common/Header/clock';
 import ClockButton from '@/components/common/Header/ClockButton';
 
 import { CLOCK_SIZE } from '@/utils/constants';
@@ -18,7 +19,7 @@ const HeaderMain = () => {
     <>
       <Upside>
         <ClockButton onClick={() => setOpenClockCollapse((prev) => !prev)} />
-        <Link href={'/'}>
+        <NextLink href={'/'}>
           <NextImage
             src={siteMetadata.images.logo}
             alt={'logo'}
@@ -26,11 +27,12 @@ const HeaderMain = () => {
             width={130}
             height={130}
           />
-        </Link>
+        </NextLink>
         <ButtonList />
       </Upside>
       <Hr />
       <ClockCollapse open={openClockCollapse}>
+        {/*<ClockCollapse >*/}
         <Clock />
       </ClockCollapse>
     </>
@@ -39,7 +41,7 @@ const HeaderMain = () => {
 
 const Upside = tw.div`flex w-full items-center justify-between bg-white px-10`;
 
-const ClockCollapse = styled.div(({ open }: { open: boolean }) => [
+const ClockCollapse = styled.div<{ open: boolean }>(({ open }) => [
   tw`flex w-full items-center justify-center overflow-hidden bg-orange-100`,
   css`
     transition: height;

@@ -4,10 +4,10 @@ import Cell from '@/components/common/cell';
 import Grid from '@/components/common/grid';
 import FullBgLayout from '@/components/layouts/full-bg-layout';
 
-import { RootProps } from '@/app/[lang]/layout';
+import { OnlyLangProps } from '@/app/[lang]/layout';
 import { useTranslation } from '@/i18n';
 
-const StudyPage = async ({ params: { lang } }: RootProps) => {
+const StudyPage = async ({ params: { lang } }: OnlyLangProps) => {
   const { t } = await useTranslation(lang, 'study');
   const links = siteMetadata.study.links;
 

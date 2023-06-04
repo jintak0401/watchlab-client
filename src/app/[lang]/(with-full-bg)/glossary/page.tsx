@@ -5,12 +5,12 @@ import CharPicker from '@/components/glossary/char-picker';
 import InputSearch from '@/components/glossary/input-search';
 
 import GlossaryLayout from '@/app/[lang]/(with-full-bg)/glossary/glossary-layout';
-import { RootProps } from '@/app/[lang]/layout';
+import { OnlyLangProps } from '@/app/[lang]/layout';
 import { useTranslation } from '@/i18n';
 import { getGlossary } from '@/request/glossary';
 import { GLOSSARY_KEY } from '@/utils/constants';
 
-const GlossaryPage = async ({ params: { lang } }: RootProps) => {
+const GlossaryPage = async ({ params: { lang } }: OnlyLangProps) => {
   const { t } = await useTranslation(lang, 'glossary');
   const queryKey = [GLOSSARY_KEY, lang];
   const queryFn = () => getGlossary(lang);

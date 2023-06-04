@@ -3,10 +3,12 @@ import { ReactNode } from 'react';
 import ClientLayout from '@/app/[lang]/layout.client';
 import { languages, TLang } from '@/i18n/settings';
 
-export interface RootProps {
+export interface OnlyLangProps {
   params: {
     lang: TLang;
   };
+}
+export interface RootProps extends OnlyLangProps {
   children?: ReactNode;
 }
 

@@ -14,6 +14,7 @@ interface Props {
   };
 }
 
+export const dynamicParams = false;
 export const generateStaticParams = async () => {
   return (
     await Promise.all(
@@ -21,7 +22,7 @@ export const generateStaticParams = async () => {
         const profiles = await getProfile(lang);
         return profiles.map(({ postSlug: slug }) => ({
           lang,
-          slug,
+          slug: slug.split('/')[1],
         }));
       })
     )

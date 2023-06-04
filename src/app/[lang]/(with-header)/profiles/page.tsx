@@ -6,16 +6,12 @@ import ProfileChain from '@/components/profile/profile-chain';
 import ProfileList from '@/components/profile/profile-list';
 import ProfileSortButtons from '@/components/profile/profile-sort-buttons';
 
+import { OnlyLangProps } from '@/app/[lang]/layout';
 import { useTranslation } from '@/i18n';
-import { TLang } from '@/i18n/settings';
 import { getProfile } from '@/request/profile';
 import { PROFILE_KEY } from '@/utils/constants';
 
-interface Props {
-  params: { lang: TLang };
-}
-
-const ProfilesPage = async ({ params: { lang } }: Props) => {
+const ProfilesPage = async ({ params: { lang } }: OnlyLangProps) => {
   const { t } = await useTranslation(lang, 'profile');
   const queryKey = [PROFILE_KEY, lang];
   const queryFn = () => getProfile(lang);

@@ -6,9 +6,9 @@ import NextLink from 'next/link';
 import { useState } from 'react';
 import tw, { css, styled } from 'twin.macro';
 
-import ButtonList from '@/components/common/Header/ButtonList';
-import Clock from '@/components/common/Header/clock';
-import ClockButton from '@/components/common/Header/ClockButton';
+import ButtonList from '@/components/common/header/button-list';
+import Clock from '@/components/common/header/clock';
+import ClockButton from '@/components/common/header/clock-button';
 
 import { CLOCK_SIZE } from '@/utils/constants';
 

@@ -1,7 +1,9 @@
-import { Locale } from '~/i18n-config';
+import WithHeaderLayout from '@/components/layouts/with-header-layout';
 
-const RootPage = ({ params: lang }: { params: { lang: Locale } }) => {
-  return <div>lang: {`${lang}`}</div>;
+import { RootProps } from '@/app/[lang]/layout';
+
+const RootPage = ({ children }: RootProps) => {
+  return <WithHeaderLayout>{children}</WithHeaderLayout>;
 };
 
 export default RootPage;

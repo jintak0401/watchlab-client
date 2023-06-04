@@ -3,6 +3,7 @@ const siteMetadata = {
     studyBg: '/static/images/study/background.webp',
     glossaryBg: '/static/images/glossary/background.webp',
     ghostFace: '/static/images/glossary/ghost-face-origin.png',
+    profilesBg: '/static/images/profiles/background.jpg',
     loupes: '/static/images/glossary/loupes.webp',
     logo: '/static/images/common/logo.webp',
     light: '/static/images/common/light.webp',

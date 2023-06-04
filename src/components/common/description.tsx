@@ -1,3 +1,5 @@
+'use client';
+
 import { PropsWithTwChildren } from 'react';
 import tw from 'twin.macro';
 

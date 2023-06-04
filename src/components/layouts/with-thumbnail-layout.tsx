@@ -1,23 +1,42 @@
+'use client';
+
+import siteMetadata from 'data/site-metadata';
 import { PropsWithTwChildren } from 'react';
 import tw from 'twin.macro';
 
 import { Subtitle, Title } from '@/components/common';
-import DefaultLayout from '@/components/layouts/DefaultLayout';
+
+import { Union } from '@/types';
+
+const THUMBNAIL_MAP = {
+  glossary: siteMetadata.images.glossaryBg,
+  study: siteMetadata.images.studyBg,
+  profiles: siteMetadata.images.profilesBg,
+} as const;
 
 interface Props extends PropsWithTwChildren {
   title: string;
   subtitle: string;
+  thumbnail: Union<typeof THUMBNAIL_MAP>;
 }
 
-const Level1Layout = ({ children, className, title, subtitle }: Props) => {
+const WithThumbnailLayout = ({
+  children,
+  title,
+  subtitle,
+  thumbnail,
+}: Props) => {
   return (
-    <DefaultLayout>
+    <>
       <div
         css={[
           tw`mx-auto w-full bg-cover bg-center bg-no-repeat`,
-          { height: 350 },
+          {
+            width: 2000,
+            height: 500,
+            backgroundImage: `url(${THUMBNAIL_MAP[thumbnail]})`,
+          },
         ]}
-        className={className}
       >
         <div tw="flex h-full w-full flex-col items-center justify-end gap-6 bg-gradient-to-b from-transparent to-black pb-6">
           <Title>{title}</Title>
@@ -33,7 +52,7 @@ const Level1Layout = ({ children, className, title, subtitle }: Props) => {
         </div>
       </div>
       {children}
-    </DefaultLayout>
+    </>
   );
 };
 
@@ -41,4 +60,4 @@ const Hr = tw.hr`w-full border-gray-300 border-t-2`;
 
 const Header = tw.header`flex h-full w-full flex-col items-center justify-end bg-gradient-to-b from-transparent to-black text-white`;
 
-export default Level1Layout;
+export default WithThumbnailLayout;

@@ -1,16 +1,16 @@
 'use client';
 
 import siteMetadata from 'data/site-metadata';
-import { useAtom } from 'jotai';
+import { useAtom, useSetAtom } from 'jotai';
 import NextImage from 'next/image';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 import { ChangeEvent } from 'react';
 import tw from 'twin.macro';
 
 import { useGlossaryQuery } from '@/hooks/rq/glossary';
+import useLocale from '@/hooks/use-locale';
 import useDebounce from '@/hooks/useDebounce';
 
+import { useTranslation } from '@/i18n/client';
 import {
   glossaryFilteredWordsAtom,
   glossarySearchAtom,
@@ -20,11 +20,11 @@ import { Word } from '@/types';
 import { fuzzySearch } from '@/utils/filterWords';
 
 const InputSearch = () => {
-  const { locale = 'en' } = useRouter();
-  const { t } = useTranslation('glossary');
+  const locale = useLocale();
+  const { t } = useTranslation(locale, 'glossary');
   const [search, setSearch] = useAtom(glossarySearchAtom);
-  const [, setFilteredWords] = useAtom(glossaryFilteredWordsAtom);
-  const [, setTableShow] = useAtom(glossaryTableAtom);
+  const setFilteredWords = useSetAtom(glossaryFilteredWordsAtom);
+  const setTableShow = useSetAtom(glossaryTableAtom);
   const { data: wordList } = useGlossaryQuery(locale);
   const debounceFilter = useDebounce((inputSearch: string) => {
     if (!wordList) return;

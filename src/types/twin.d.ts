@@ -1,4 +1,4 @@
-import { DOMAttributes, PropsWithChildren } from 'react';
+import { DOMAttributes, ReactNode } from 'react';
 import styledImport, { css as cssImport, CSSProp } from 'styled-components';
 import 'twin.macro';
 
@@ -26,7 +26,7 @@ declare module 'react' {
     className?: string;
   };
 
-  type PropsWithTwChildren = PropsWithChildren & PropsWithTw;
+  type PropsWithTwChildren = PropsWithTw & { children: ReactNode };
 }
 
 // The 'as' prop on styled components

@@ -1,14 +1,13 @@
-import styled from '@emotion/styled';
 import { useAtom } from 'jotai';
 import React, { useEffect, useRef } from 'react';
-import tw, { css } from 'twin.macro';
+import tw, { css, styled } from 'twin.macro';
 
-import Row from '@/components/glossary/Table/Row';
+import Row from '@/components/glossary/Table/row';
 
 import { glossaryFilteredWordsAtom, glossaryTableAtom } from '@/store/glossary';
 import { instanceOfWord } from '@/types';
 
-import Table from './Table/Table';
+import Table from './Table/table';
 
 const GlossaryTable = () => {
   const [tableShow] = useAtom(glossaryTableAtom);
@@ -23,13 +22,13 @@ const GlossaryTable = () => {
   return (
     <TableWrapper
       ref={tableRef}
-      css={
+      css={[
         tableShow &&
-        css`
-          transition: top 0.8s ease-in-out;
-          top: 470px;
-        `
-      }
+          css`
+            transition: top 0.8s ease-in-out;
+            top: 470px;
+          `,
+      ]}
     >
       {filteredWords?.map((word, idx) => {
         const { word: _word, description } = instanceOfWord(word)

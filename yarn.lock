@@ -1527,6 +1527,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.19.4, @babel/runtime@npm:^7.21.5":
+  version: 7.22.3
+  resolution: "@babel/runtime@npm:7.22.3"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 8fc50785ca4cba749fed90bffca7e6fd52d4709755654e95b8d2a945fc034b56fb8c2e8a0183fea7c4abb86bf5fa77678c0ea35163b6920649833d180c34c234
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.18.10, @babel/template@npm:^7.20.7":
   version: 7.20.7
   resolution: "@babel/template@npm:7.20.7"
@@ -1653,15 +1662,6 @@ __metadata:
   version: 8.36.0
   resolution: "@eslint/js@npm:8.36.0"
   checksum: b7d6b84b823c8c7784be390741196617565527b1f7c0977fde9455bfb57fd88f81c074a03dd878757d2c33fa29f24291e9ecbc1425710f067917324b55e1bf3a
-  languageName: node
-  linkType: hard
-
-"@formatjs/intl-localematcher@npm:^0.2.32":
-  version: 0.2.32
-  resolution: "@formatjs/intl-localematcher@npm:0.2.32"
-  dependencies:
-    tslib: ^2.4.0
-  checksum: 477e18aabaf2e6e90fc12952a3cb6c0ebb40ad99414d6b9d2501c6348fbad58cacb433ec6630955cfd1491ea7630f32a9dc280bb27d0fb8a784251404a54140a
   languageName: node
   linkType: hard
 
@@ -2354,6 +2354,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"accept-language@npm:^3.0.18":
+  version: 3.0.18
+  resolution: "accept-language@npm:3.0.18"
+  dependencies:
+    bcp47: ^1.1.2
+    stable: ^0.1.6
+  checksum: 80729f988a5931f75b37d985d5497ee58cb914ab94d6d58ebeb0191d7e24406d464587897c2dfb1f873f2414ac06161b42f15f14859bc89d16715602bc3237fb
+  languageName: node
+  linkType: hard
+
 "acorn-jsx@npm:^5.3.2":
   version: 5.3.2
   resolution: "acorn-jsx@npm:5.3.2"
@@ -2759,6 +2769,13 @@ __metadata:
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
   checksum: 669632eb3745404c2f822a18fc3a0122d2f9a7a13f7fb8b5823ee19d1d2ff9ee5b52c53367176ea4ad093c332fd5ab4bd0ebae5a8e27917a4105a4cfc86b1005
+  languageName: node
+  linkType: hard
+
+"bcp47@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "bcp47@npm:1.1.2"
+  checksum: 4e67daddfacf846e28895d682972f7de0c22669e99b2ed4561615f13c9a8fecc100ebe76f4b8496f535945db84ce04a32f7bce6ef26329a3cf49242cf0d36a0a
   languageName: node
   linkType: hard
 
@@ -4613,6 +4630,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"i18next-browser-languagedetector@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "i18next-browser-languagedetector@npm:7.0.2"
+  dependencies:
+    "@babel/runtime": ^7.19.4
+  checksum: ea6c5254308965ff9fe9870c16b546b67d065cc00bd3af961f1414ba73fbe323a7d1b76fe7524b1581307f7849fa6d04c36336693818a23d3690ebefc60d9071
+  languageName: node
+  linkType: hard
+
 "i18next-fs-backend@npm:^2.1.1":
   version: 2.1.1
   resolution: "i18next-fs-backend@npm:2.1.1"
@@ -4620,12 +4646,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^22.4.13":
-  version: 22.4.13
-  resolution: "i18next@npm:22.4.13"
+"i18next-resources-to-backend@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "i18next-resources-to-backend@npm:1.1.4"
+  dependencies:
+    "@babel/runtime": ^7.21.5
+  checksum: 4f3f25de0d9c96b109dfdc9259864898ac9d140a80a372925e0c5a34b13bd95dcb4c682c6255a5f3bb4c4dc40c20d0f9d1b82c491ebe2f8f245ae149fe911a1d
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^22.5.0":
+  version: 22.5.0
+  resolution: "i18next@npm:22.5.0"
   dependencies:
     "@babel/runtime": ^7.20.6
-  checksum: a40ca4ce749854a806a01e3e60ee492f2911b1f7acb6ed338bb023211259ef8c39e914734d10197d3279941459767897ceb1989c8e24cd73730fdf211e079037
+  checksum: 291c0e02fda20bd1827b6529dad74c01867892c7ac000befe0f69e10ad97ab074a2ae5b4ce1e0638c28ae1a6f59d1ed8503ea05bd1c324d731a44dd94c43a49a
   languageName: node
   linkType: hard
 
@@ -6253,9 +6288,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:^12.2.0":
-  version: 12.2.0
-  resolution: "react-i18next@npm:12.2.0"
+"react-i18next@npm:^12.3.1":
+  version: 12.3.1
+  resolution: "react-i18next@npm:12.3.1"
   dependencies:
     "@babel/runtime": ^7.20.6
     html-parse-stringify: ^3.0.1
@@ -6267,7 +6302,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: ed2d6a5bb6746c2ea25cca9531b400d62edef6479631c1113eb7a3c3f6b28d493492171d7dc6d87f61a7d7e9b21d4be3bd7eaf0f7af00392fb546d8c50267345
+  checksum: fe3f360e5184bc63861734e94bf625a09b9ec0d28fab41779a68758af258fd1737dde25ff7a88ddb66c1571a3e3de5b3403825a91b4949bf9832a00615acb87a
   languageName: node
   linkType: hard
 
@@ -6762,6 +6797,13 @@ __metadata:
   dependencies:
     minipass: ^3.1.1
   checksum: fb58f5e46b6923ae67b87ad5ef1c5ab6d427a17db0bead84570c2df3cd50b4ceb880ebdba2d60726588272890bae842a744e1ecce5bd2a2a582fccd5068309eb
+  languageName: node
+  linkType: hard
+
+"stable@npm:^0.1.6":
+  version: 0.1.8
+  resolution: "stable@npm:0.1.8"
+  checksum: 2ff482bb100285d16dd75cd8f7c60ab652570e8952c0bfa91828a2b5f646a0ff533f14596ea4eabd48bb7f4aeea408dce8f8515812b975d958a4cc4fa6b9dfeb
   languageName: node
   linkType: hard
 
@@ -7399,7 +7441,6 @@ __metadata:
     "@babel/plugin-syntax-typescript": ^7.20.0
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.21.0
-    "@formatjs/intl-localematcher": ^0.2.32
     "@next/eslint-plugin-next": ^13.2.4
     "@svgr/webpack": ^7.0.0
     "@tanstack/react-query": ^4.28.0
@@ -7411,6 +7452,7 @@ __metadata:
     "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.56.0
     "@typescript-eslint/parser": ^5.56.0
+    accept-language: ^3.0.18
     autoprefixer: ^10.4.14
     axios: ^1.4.0
     babel-loader: ^9.1.2
@@ -7424,9 +7466,10 @@ __metadata:
     eslint-plugin-unused-imports: ^2.0.0
     fuse.js: ^6.6.2
     html-react-parser: ^4.0.0
-    i18next: ^22.4.13
+    i18next: ^22.5.0
+    i18next-browser-languagedetector: ^7.0.2
+    i18next-resources-to-backend: ^1.1.4
     jotai: ^2.0.3
-    negotiator: ^0.6.3
     next: ^13.4.3
     next-i18next: ^13.2.2
     next-themes: ^0.2.1
@@ -7435,7 +7478,7 @@ __metadata:
     prettier-plugin-twin.macro: ^1.0.11
     react: 18.2.0
     react-dom: 18.2.0
-    react-i18next: ^12.2.0
+    react-i18next: ^12.3.1
     react-icons: ^4.8.0
     sharp: ^0.32.0
     styled-components: ^6.0.0-rc.3

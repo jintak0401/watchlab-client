@@ -1,7 +1,9 @@
-import { keyframes } from '@emotion/react';
+'use client';
+
 import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import { useEffect, useState } from 'react';
+import { keyframes } from 'styled-components';
 import tw, { css, styled } from 'twin.macro';
 
 import { CLOCK_SIZE } from '@/utils/constants';

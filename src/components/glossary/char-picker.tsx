@@ -3,11 +3,11 @@
 import siteMetadata from 'data/site-metadata';
 import { useAtom } from 'jotai';
 import NextImage from 'next/image';
-import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import tw from 'twin.macro';
 
 import { useGlossaryQuery } from '@/hooks/rq/glossary';
+import useLocale from '@/hooks/use-locale';
 
 import {
   glossaryCharAtom,
@@ -15,8 +15,9 @@ import {
   glossarySearchAtom,
   glossaryTableAtom,
 } from '@/store/glossary';
-import { GlossaryChar, glossaryChars } from '@/types';
+import { GlossaryChar } from '@/types';
 import { filterWordsWithStart } from '@/utils/filterWords';
+import { glossaryChars } from '@/utils/word';
 
 const CharPicker = () => {
   const [selectedChar, setSelectedChar] = useAtom(glossaryCharAtom);
@@ -24,10 +25,10 @@ const CharPicker = () => {
   const [, setTableShow] = useAtom(glossaryTableAtom);
   const ghostFaceRef = useRef<HTMLImageElement | null>(null);
   const alphabetRefs = useRef<{
-    [key: GlossaryChar]: HTMLButtonElement | null;
+    [key: string]: HTMLButtonElement | null;
   }>({});
 
-  const { locale = 'en' } = useRouter();
+  const locale = useLocale();
   const { data: wordList } = useGlossaryQuery(locale);
   const [, setFilteredWords] = useAtom(glossaryFilteredWordsAtom);
 

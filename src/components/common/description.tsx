@@ -1,9 +1,7 @@
 import { PropsWithTwChildren } from 'react';
 import tw from 'twin.macro';
 
-type Props = PropsWithTwChildren;
-
-const Description = ({ children, className }: Props) => {
+const Description = ({ children, className }: PropsWithTwChildren) => {
   return <DIV className={className}>{children}</DIV>;
 };
 

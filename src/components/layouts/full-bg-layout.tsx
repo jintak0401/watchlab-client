@@ -11,6 +11,7 @@ import { Union } from '@/types';
 
 const BG_IMAGE = {
   manuals: siteMetadata.images.manualsBg,
+  study: siteMetadata.images.studyBg,
   glossary: siteMetadata.images.glossaryBg,
 } as const;
 

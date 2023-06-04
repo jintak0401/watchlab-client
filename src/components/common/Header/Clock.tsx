@@ -1,5 +1,5 @@
 import { keyframes } from '@emotion/react';
-import metadata from 'data/metadata';
+import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import { useEffect, useState } from 'react';
 import tw, { css, styled } from 'twin.macro';
@@ -16,7 +16,7 @@ const ANIMATION: { [key in THandType]: string } = {
 };
 
 const Clock = () => {
-  const { plate, hourHand, minuteHand, secondHand } = metadata.images.clock;
+  const { plate, hourHand, minuteHand, secondHand } = siteMetadata.images.clock;
   const [date, setDate] = useState(new Date(0));
   const [hourAngle, minuteAngle, secondAngle] = calcClockRotate(
     date.getHours(),

@@ -1,4 +1,4 @@
-import metadata from 'data/metadata';
+import siteMetadata from 'data/site-metadata';
 import { useAtom } from 'jotai';
 import NextImage from 'next/image';
 import { useRouter } from 'next/router';
@@ -111,7 +111,7 @@ const CharPicker = () => {
         draggable={false}
         ref={ghostFaceRef}
         css={[tw`pointer-events-none absolute`, { left: -100 }]}
-        src={metadata.images.ghostFace}
+        src={siteMetadata.images.ghostFace}
         alt={'ghost-face'}
         width={70}
         height={70}
@@ -134,7 +134,7 @@ const CharPicker = () => {
             <NextImage
               draggable={false}
               tw="w-full"
-              src={metadata.images.loupes}
+              src={siteMetadata.images.loupes}
               alt={'loupes'}
               width={100}
               height={100}

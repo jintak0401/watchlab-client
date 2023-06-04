@@ -1,4 +1,4 @@
-import metadata from 'data/metadata';
+import siteMetadata from 'data/site-metadata';
 import { GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -25,7 +25,7 @@ export const getServerSideProps = async (
 const StudyPage = () => {
   const { locale = 'en' } = useRouter();
   const { t } = useTranslation('study');
-  const links = metadata.study.links;
+  const links = siteMetadata.study.links;
 
   return (
     <StudyWrapper css={{ paddingTop: 200, paddingBottom: 100 }}>
@@ -41,7 +41,7 @@ const StudyPage = () => {
             href={`/study/${key}`}
             title={t(`${key}.title`)}
             description={t(`${key}.description`)}
-            image={metadata.images.study[idx]}
+            image={siteMetadata.images.study[idx]}
           />
         ))}
       </Grid>

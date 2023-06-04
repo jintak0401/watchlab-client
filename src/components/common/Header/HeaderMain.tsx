@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import metadata from 'data/metadata';
+import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -20,7 +20,7 @@ const HeaderMain = () => {
         <ClockButton onClick={() => setOpenClockCollapse((prev) => !prev)} />
         <Link href={'/'}>
           <NextImage
-            src={metadata.images.logo}
+            src={siteMetadata.images.logo}
             alt={'logo'}
             tw="my-3"
             width={130}

@@ -1,4 +1,4 @@
-import metadata from 'data/metadata';
+import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import { useTheme } from 'next-themes';
 import { PropsWithTw, useEffect, useState } from 'react';
@@ -26,8 +26,8 @@ const ThemeSwitch = ({ ...rest }: PropsWithTw) => {
       <NextImage
         src={
           mounted && (theme === 'dark' || resolvedTheme === 'dark')
-            ? metadata.images.dark
-            : metadata.images.light
+            ? siteMetadata.images.dark
+            : siteMetadata.images.light
         }
         alt={'dark mode'}
         width={50}

@@ -1,5 +1,5 @@
-import metadata from 'data/metadata';
 import navLinks from 'data/navLinks';
+import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -24,7 +24,7 @@ const NavBar = () => {
       {showNavLogo && (
         <Link href={'/'}>
           <NextImage
-            src={metadata.images.logo}
+            src={siteMetadata.images.logo}
             alt={'logo'}
             width={40}
             height={40}

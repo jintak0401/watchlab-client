@@ -3,7 +3,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
-import metadata from 'data/metadata';
+import siteMetadata from 'data/site-metadata';
 import { Provider } from 'jotai';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
@@ -36,7 +36,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           <GlobalStyles />
           <ThemeProvider
             attribute="class"
-            defaultTheme={metadata.theme}
+            defaultTheme={siteMetadata.theme}
             enableColorScheme={false}
           >
             <main

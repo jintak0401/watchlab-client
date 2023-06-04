@@ -1,4 +1,4 @@
-const metadata = {
+const siteMetadata = {
   images: {
     studyBg: '/static/images/study/background.webp',
     glossaryBg: '/static/images/glossary/background.webp',
@@ -44,4 +44,4 @@ const metadata = {
   theme: 'light',
 };
 
-export default metadata;
+export default siteMetadata;

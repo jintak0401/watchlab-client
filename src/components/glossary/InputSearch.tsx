@@ -1,4 +1,4 @@
-import metadata from 'data/metadata';
+import siteMetadata from 'data/site-metadata';
 import { useAtom } from 'jotai';
 import NextImage from 'next/image';
 import { useRouter } from 'next/router';
@@ -39,7 +39,7 @@ const InputSearch = () => {
         <NextImage
           draggable={false}
           tw="h-2/3 object-contain"
-          src={metadata.images.loupes}
+          src={siteMetadata.images.loupes}
           alt={'loupes'}
           width={100}
           height={100}

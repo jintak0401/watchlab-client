@@ -1,4 +1,4 @@
-import metadata from 'data/metadata';
+import siteMetadata from 'data/site-metadata';
 import { GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -25,7 +25,7 @@ export const getServerSideProps = async (
 const ManualPage = () => {
   const { locale = 'en' } = useRouter();
   const { t } = useTranslation('manual');
-  const links = metadata.manual.links;
+  const links = siteMetadata.manual.links;
 
   return (
     <ManualWrapper css={{ paddingTop: 200, paddingBottom: 100 }}>
@@ -42,7 +42,7 @@ const ManualPage = () => {
             href={`/manual/${key}`}
             title={t(`${key}.title`)}
             description={t(`${key}.description`)}
-            image={metadata.images.manuals[idx]}
+            image={siteMetadata.images.manuals[idx]}
           />
         ))}
       </Grid>

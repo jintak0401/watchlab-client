@@ -1,12 +1,11 @@
 import { ReactNode } from 'react';
 
 import ClientLayout from '@/app/[lang]/layout.client';
-import { languages } from '@/i18n/settings';
-import { Union } from '@/types';
+import { languages, TLang } from '@/i18n/settings';
 
 export interface RootProps {
   params: {
-    lang: Union<typeof languages>;
+    lang: TLang;
   };
   children: ReactNode;
 }

@@ -35,13 +35,13 @@ const StudyPage = () => {
         <Description>{t('description')}</Description>
       </StudyHeader>
       <Grid tw="mt-16" row={2} col={3}>
-        {links.map((key) => (
+        {links.map((key, idx) => (
           <Cell
             key={key}
             href={`/study/${key}`}
             title={t(`${key}.title`)}
             description={t(`${key}.description`)}
-            image={'/static/images/study/sample.png'}
+            image={metadata.images.study[idx]}
           />
         ))}
       </Grid>

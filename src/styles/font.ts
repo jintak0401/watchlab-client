@@ -2,7 +2,9 @@ import {
   Cormorant_Garamond,
   Crimson_Pro,
   Crimson_Text,
+  Della_Respira,
   Inknut_Antiqua,
+  Libre_Baskerville,
 } from 'next/font/google';
 
 export const cormorantGaramond = Cormorant_Garamond({
@@ -27,4 +29,16 @@ export const inknutAntiqua = Inknut_Antiqua({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-inknut-antiqua',
+});
+
+export const libre = Libre_Baskerville({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-libre-baskerville',
+});
+
+export const della = Della_Respira({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-della-respira',
 });

@@ -1,6 +1,6 @@
 {
   "name": "watchlab-client",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": true,
   "babelMacros": {
     "twin": {
@@ -19,10 +19,10 @@
     "@tanstack/react-query": "^4.28.0",
     "axios": "^1.3.4",
     "fuse.js": "^6.6.2",
-    "html-react-parser": "^3.0.15",
+    "html-react-parser": "^4.0.0",
     "i18next": "^22.4.13",
     "jotai": "^2.0.3",
-    "next": "^13.3.0",
+    "next": "^13.4.3",
     "next-i18next": "^13.2.2",
     "next-themes": "^0.2.1",
     "react": "18.2.0",

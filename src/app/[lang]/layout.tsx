@@ -1,21 +1,21 @@
 import { ReactNode } from 'react';
 
 import ClientLayout from '@/app/[lang]/layout.client';
+import { languages } from '@/i18n/settings';
+import { Union } from '@/types';
 
-import { i18n, Locale } from '~/i18n-config';
-
-interface Props {
+export interface RootProps {
   params: {
-    lang: Locale;
+    lang: Union<typeof languages>;
   };
   children: ReactNode;
 }
 
 export const generateStaticParams = () => {
-  return i18n.locales.map((locale) => ({ lang: locale }));
+  return languages.map((locale) => ({ lang: locale }));
 };
 
-const RootLayout = ({ params, children }: Props) => {
+const RootLayout = ({ params, children }: RootProps) => {
   return <ClientLayout lang={params.lang}>{children}</ClientLayout>;
 };
 

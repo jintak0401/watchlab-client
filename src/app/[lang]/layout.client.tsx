@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ReactNode, useState } from 'react';
 
+import { languages } from '@/i18n/settings';
 import {
   cormorantGaramond,
   crimsonPro,
@@ -13,13 +14,12 @@ import {
   libre,
 } from '@/styles/font';
 import GlobalStyles from '@/styles/GlobalStyles';
+import { Union } from '@/types';
 
 import StyledComponentsRegistry from './registry';
 
-import { Locale } from '~/i18n-config';
-
 interface Props {
-  lang: Locale;
+  lang: Union<typeof languages>;
   children: ReactNode;
 }
 

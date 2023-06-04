@@ -35,10 +35,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-plugin", "npm:11.10.6"],\
             ["@emotion/react", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:11.10.6"],\
             ["@emotion/styled", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:11.10.6"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["@next/eslint-plugin-next", "npm:13.2.4"],\
             ["@svgr/webpack", "npm:7.0.0"],\
             ["@tanstack/react-query", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:4.28.0"],\
             ["@tanstack/react-query-devtools", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:4.28.0"],\
+            ["@types/negotiator", "npm:0.6.1"],\
             ["@types/node", "npm:18.15.7"],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.0.11"],\
@@ -58,6 +60,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["html-react-parser", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:4.0.0"],\
             ["i18next", "npm:22.4.13"],\
             ["jotai", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:2.0.3"],\
+            ["negotiator", "npm:0.6.3"],\
             ["next", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:13.4.3"],\
             ["next-i18next", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:13.2.2"],\
             ["next-themes", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:0.2.1"],\
@@ -2725,6 +2728,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@formatjs/intl-localematcher", [\
+        ["npm:0.2.32", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-localematcher-npm-0.2.32-1117c79148-477e18aaba.zip/node_modules/@formatjs/intl-localematcher/",\
+          "packageDependencies": [\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
+            ["tslib", "npm:2.5.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@gar/promisify", [\
         ["npm:1.1.3", {\
           "packageLocation": "./.yarn/cache/@gar-promisify-npm-1.1.3-ac1a325862-4059f790e2.zip/node_modules/@gar/promisify/",\
@@ -3422,6 +3435,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-json5-npm-0.0.29-f63a7916bd-e60b153664.zip/node_modules/@types/json5/",\
           "packageDependencies": [\
             ["@types/json5", "npm:0.0.29"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/negotiator", [\
+        ["npm:0.6.1", {\
+          "packageLocation": "./.yarn/cache/@types-negotiator-npm-0.6.1-bd102330ab-e39f985874.zip/node_modules/@types/negotiator/",\
+          "packageDependencies": [\
+            ["@types/negotiator", "npm:0.6.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9563,10 +9585,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-plugin", "npm:11.10.6"],\
             ["@emotion/react", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:11.10.6"],\
             ["@emotion/styled", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:11.10.6"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["@next/eslint-plugin-next", "npm:13.2.4"],\
             ["@svgr/webpack", "npm:7.0.0"],\
             ["@tanstack/react-query", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:4.28.0"],\
             ["@tanstack/react-query-devtools", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:4.28.0"],\
+            ["@types/negotiator", "npm:0.6.1"],\
             ["@types/node", "npm:18.15.7"],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.0.11"],\
@@ -9586,6 +9610,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["html-react-parser", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:4.0.0"],\
             ["i18next", "npm:22.4.13"],\
             ["jotai", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:2.0.3"],\
+            ["negotiator", "npm:0.6.3"],\
             ["next", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:13.4.3"],\
             ["next-i18next", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:13.2.2"],\
             ["next-themes", "virtual:2681229f05cdb4d277e9ffc123ac75fc697b1c84d024ccea698ef9f05e7118d85e1043cb3257e26157da659bbaa32d1b3f85e7990ece0378f0e92dc8379b9a95#npm:0.2.1"],\

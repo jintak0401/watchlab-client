@@ -1,12 +1,13 @@
 'use client';
 
-import { PropsWithTwChildren } from 'react';
+import { CSSProperties, PropsWithTwChildren } from 'react';
 
 interface Props extends PropsWithTwChildren {
   row: number;
   col: number;
   gapX?: number;
   gapY?: number;
+  style?: CSSProperties;
 }
 
 const Grid = ({
@@ -16,6 +17,7 @@ const Grid = ({
   col,
   gapX = 30,
   gapY = 30,
+  ...rest
 }: Props) => {
   return (
     <div
@@ -28,6 +30,7 @@ const Grid = ({
           gap: `${gapY}px ${gapX}px`,
         },
       ]}
+      {...rest}
     >
       {children}
     </div>

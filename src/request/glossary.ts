@@ -7,7 +7,9 @@ const glossaryReqUrl = (locale: string) => {
   return `${process.env.NEXT_PUBLIC_SERVER_URL}/${locale}/dictionary`;
 };
 
-export const getGlossary = async (locale: string): Promise<Word[]> => {
+export const getGlossary = async (
+  locale: string
+): Promise<(Word & { id: number })[]> => {
   const url = glossaryReqUrl(locale);
   const res = await fetch(url, {
     method: 'GET',

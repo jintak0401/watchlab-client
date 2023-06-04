@@ -1,7 +1,6 @@
 export interface Word {
   word: string;
   description: string;
-  id: number;
 }
 
 export type GlossaryChar =

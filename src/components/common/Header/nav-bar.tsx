@@ -1,16 +1,18 @@
+'use client';
+
 import navLinks from 'data/navLinks';
 import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import tw from 'twin.macro';
 
+import useLocale from '@/hooks/use-locale';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const NavBar = () => {
   const [showNavLogo, setShowNavLogo] = useState(false);
-  const { locale = 'en' } = useRouter();
+  const locale = useLocale();
   const navRef = useRef<HTMLElement>(null);
 
   useIntersectionObserver({

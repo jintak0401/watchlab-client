@@ -4,6 +4,7 @@ const siteMetadata = {
     glossaryBg: '/static/images/glossary/background.webp',
     ghostFace: '/static/images/glossary/ghost-face-origin.png',
     profilesBg: '/static/images/profiles/background.jpg',
+    manualsBg: '/static/images/manual/background.webp',
     loupes: '/static/images/glossary/loupes.webp',
     logo: '/static/images/common/logo.webp',
     light: '/static/images/common/light.webp',

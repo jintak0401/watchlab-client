@@ -1,9 +1,8 @@
 'use client';
 
 import { PropsWithChildren } from 'react';
+import Header from 'src/components/common/header';
 import 'twin.macro';
-
-import Header from '@/components/common/Header';
 
 type Props = PropsWithChildren;
 

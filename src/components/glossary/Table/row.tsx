@@ -1,6 +1,7 @@
-import styled from '@emotion/styled';
+'use client';
+
 import { PropsWithTw, ReactNode } from 'react';
-import tw, { css } from 'twin.macro';
+import tw, { css, styled } from 'twin.macro';
 
 interface Props extends PropsWithTw {
   word: ReactNode;

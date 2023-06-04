@@ -1,6 +1,6 @@
 'use client';
 
-import navLinks from 'data/navLinks';
+import navLinks from 'data/nav-links';
 import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import Link from 'next/link';

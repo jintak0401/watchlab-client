@@ -42,6 +42,7 @@ const siteMetadata = {
     links: ['beginner', 'buyer', 'user', 'maintenance'],
   },
   theme: 'light',
+  revalidate: 10,
 };
 
 export default siteMetadata;

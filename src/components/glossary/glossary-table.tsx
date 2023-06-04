@@ -2,12 +2,11 @@ import { useAtom } from 'jotai';
 import React, { useEffect, useRef } from 'react';
 import tw, { css, styled } from 'twin.macro';
 
-import Row from '@/components/glossary/Table/row';
+import Row from '@/components/glossary/table/row';
+import Table from '@/components/glossary/table/table';
 
 import { glossaryFilteredWordsAtom, glossaryTableAtom } from '@/store/glossary';
 import { instanceOfWord } from '@/utils/word';
-
-import Table from './Table/table';
 
 const GlossaryTable = () => {
   const [tableShow] = useAtom(glossaryTableAtom);

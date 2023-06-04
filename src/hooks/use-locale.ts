@@ -1,11 +1,10 @@
 'use client';
 
 import { useParams } from 'next/navigation';
+import { TLang } from '@/i18n/settings';
 
-import { Locale } from '~/i18n-config';
-
-const useLocale = (): Locale => {
-  return useParams().lang as Locale;
+const useLocale = (): TLang => {
+  return useParams().lang as TLang;
 };
 
 export default useLocale;

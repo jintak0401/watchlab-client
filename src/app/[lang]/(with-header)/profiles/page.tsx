@@ -7,13 +7,12 @@ import ProfileList from '@/components/profile/profile-list';
 import ProfileSortButtons from '@/components/profile/profile-sort-buttons';
 
 import { useTranslation } from '@/i18n';
+import { TLang } from '@/i18n/settings';
 import { getProfile } from '@/request/profile';
 import { PROFILE_KEY } from '@/utils/constants';
 
-import { Locale } from '~/i18n-config';
-
 interface Props {
-  params: { lang: Locale };
+  params: { lang: TLang };
 }
 
 const ProfilesPage = async ({ params: { lang } }: Props) => {

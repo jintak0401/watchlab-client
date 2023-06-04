@@ -1,5 +1,5 @@
-import HeaderMain from '@/components/common/Header/HeaderMain';
-import NavBar from '@/components/common/Header/NavBar';
+import HeaderMain from './header-main';
+import NavBar from './nav-bar';
 
 const Header = () => {
   return (

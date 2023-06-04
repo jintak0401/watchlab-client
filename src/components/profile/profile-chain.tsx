@@ -4,21 +4,20 @@ import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
 import tw from 'twin.macro';
-import 'twin.macro';
 
 import { useProfileQuery } from '@/hooks/rq/profile';
 import useLocale from '@/hooks/use-locale';
 
 const ProfileChain = () => {
   const locale = useLocale();
-  const pathname = usePathname();
+  const pathname = usePathname().split('/').slice(2).join('/');
   const { data: profiles = [] } = useProfileQuery(locale);
 
   const profilesLinkArr = [...profiles]
     .sort((a, b) => a.name.localeCompare(b.name))
     .map(({ postSlug, name }) => (
       <NextLink
-        css={[postSlug === pathname.slice(1) && tw`hover:underline`]}
+        css={[postSlug === pathname && tw`underline`]}
         href={`/${postSlug}`}
         key={name}
       >

@@ -1,7 +1,7 @@
-import { Global } from '@emotion/react';
-import tw, { css, GlobalStyles as BaseStyles } from 'twin.macro';
+import { createGlobalStyle } from 'styled-components';
+import tw, { GlobalStyles as BaseStyles } from 'twin.macro';
 
-const customStyles = css({
+const CustomStyles = createGlobalStyle({
   '*': {
     ...tw`font-serif`,
   },
@@ -18,7 +18,7 @@ const customStyles = css({
 const GlobalStyles = () => (
   <>
     <BaseStyles />
-    <Global styles={customStyles} />
+    <CustomStyles />
   </>
 );
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { ForwardedRef, forwardRef, PropsWithTwChildren } from 'react';
 import 'twin.macro';
 

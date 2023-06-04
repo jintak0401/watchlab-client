@@ -7,7 +7,7 @@ export interface RootProps {
   params: {
     lang: TLang;
   };
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const generateStaticParams = () => {

@@ -16,7 +16,7 @@ import {
   glossaryTableAtom,
 } from '@/store/glossary';
 import { GlossaryChar } from '@/types';
-import { filterWordsWithStart } from '@/utils/filterWords';
+import { filterWordsWithStart } from '@/utils/filter-words';
 import { glossaryChars } from '@/utils/word';
 
 const CharPicker = () => {

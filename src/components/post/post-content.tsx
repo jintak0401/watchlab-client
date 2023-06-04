@@ -3,7 +3,7 @@
 import parse from 'html-react-parser';
 import tw from 'twin.macro';
 
-import { replaceNode } from '@/utils/htmlNextParser';
+import { replaceNode } from '@/utils/html-next-parser';
 
 interface Props {
   content: string;

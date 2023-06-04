@@ -13,7 +13,7 @@ import {
   inknutAntiqua,
   libre,
 } from '@/styles/font';
-import GlobalStyles from '@/styles/GlobalStyles';
+import GlobalStyles from '@/styles/global-styles';
 import { Union } from '@/types';
 
 import StyledComponentsRegistry from './registry';

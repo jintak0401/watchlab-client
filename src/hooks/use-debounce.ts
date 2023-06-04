@@ -1,3 +1,5 @@
+'use client';
+
 import { useRef } from 'react';
 
 const useDebounce = (callback: (cbArgs: any) => void, term: number) => {

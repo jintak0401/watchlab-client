@@ -3,7 +3,7 @@
 import tw from 'twin.macro';
 import 'twin.macro';
 
-import useClock from '@/hooks/useClock';
+import useClock from '@/hooks/use-clock';
 
 interface Props {
   onClick: () => void;

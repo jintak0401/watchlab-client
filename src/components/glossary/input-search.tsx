@@ -7,8 +7,8 @@ import { ChangeEvent } from 'react';
 import tw from 'twin.macro';
 
 import { useGlossaryQuery } from '@/hooks/rq/glossary';
+import useDebounce from '@/hooks/use-debounce';
 import useLocale from '@/hooks/use-locale';
-import useDebounce from '@/hooks/useDebounce';
 
 import { useTranslation } from '@/i18n/client';
 import {

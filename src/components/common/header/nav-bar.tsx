@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { useRef, useState } from 'react';
 import tw from 'twin.macro';
 
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import useLocale from '@/hooks/use-locale';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const NavBar = () => {
   const [showNavLogo, setShowNavLogo] = useState(false);

@@ -1,11 +1,8 @@
+// withTwin.js
 const path = require('path');
 
 // The folders containing files importing twin.macro
-const includedDirs = [
-  path.resolve(__dirname, 'src', 'components'),
-  path.resolve(__dirname, 'src', 'pages'),
-  path.resolve(__dirname, 'src', 'styles'),
-];
+const includedDirs = [path.resolve(__dirname, 'src')];
 
 module.exports = function withTwin(nextConfig) {
   return {
@@ -14,24 +11,26 @@ module.exports = function withTwin(nextConfig) {
       const { dev, isServer } = options;
       config.module = config.module || {};
       config.module.rules = config.module.rules || [];
+
+      const patchedDefaultLoaders = options.defaultLoaders.babel;
+      patchedDefaultLoaders.options.hasServerComponents = false;
+      patchedDefaultLoaders.options.hasReactRefresh = false;
+
       config.module.rules.push({
         test: /\.(tsx|ts)$/,
         include: includedDirs,
         use: [
-          options.defaultLoaders.babel,
+          patchedDefaultLoaders,
           {
             loader: 'babel-loader',
             options: {
               sourceMaps: dev,
-              presets: [
-                [
-                  '@babel/preset-react',
-                  { runtime: 'automatic', importSource: '@emotion/react' },
-                ],
-              ],
               plugins: [
                 require.resolve('babel-plugin-macros'),
-                require.resolve('@emotion/babel-plugin'),
+                [
+                  require.resolve('babel-plugin-styled-components'),
+                  { ssr: true, displayName: true },
+                ],
                 [
                   require.resolve('@babel/plugin-syntax-typescript'),
                   { isTSX: true },

@@ -1,9 +1,11 @@
 const withTwin = require('./withTwin.js');
-const { i18n } = require('./next-i18next.config');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withTwin({
   reactStrictMode: true,
+  experimental: {
+    appDir: true,
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -19,7 +21,6 @@ const nextConfig = withTwin({
       'watchlab-s3.s3.us-east-1.amazonaws.com',
     ],
   },
-  i18n,
 });
 
 module.exports = nextConfig;

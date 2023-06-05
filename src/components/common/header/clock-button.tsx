@@ -14,7 +14,7 @@ const padZero = (num: number) => num.toString().padStart(2, '0');
 const ClockButton = ({ onClick }: Props) => {
   const { hour, minute, second } = useClock();
   return (
-    <Button onClick={onClick} suppressHydrationWarning={true}>
+    <Button onClick={onClick}>
       {[hour, minute, second].map(padZero).join(':')}
     </Button>
   );

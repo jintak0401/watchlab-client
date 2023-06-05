@@ -22,6 +22,7 @@ const ProfilesPage = async ({ params: { lang } }: OnlyLangProps) => {
       subtitle={t('subtitle')}
       thumbnail={'profiles'}
     >
+      {/* @ts-expect-error Server Component */}
       <Hydration queryKey={queryKey} queryFn={queryFn}>
         <ProfileChain />
         <ProfileSortButtons />

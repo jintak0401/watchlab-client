@@ -6,6 +6,7 @@ const useClock = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
+    setTime(new Date());
     const intervalId = setInterval(() => {
       setTime(new Date());
     }, 1000);

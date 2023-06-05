@@ -3,6 +3,7 @@
 import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import { useEffect, useState } from 'react';
+import { keyframes } from 'styled-components';
 import tw, { css, styled } from 'twin.macro';
 
 import { CLOCK_SIZE } from '@/utils/constants';
@@ -36,6 +37,42 @@ const Clock = () => {
     };
   }, []);
 
+  const clockHands = [
+    {
+      angle: hourAngle,
+      handStyle: getClockHandStyle({
+        type: 'h',
+        size: CLOCK_SIZE - 108,
+        mt: 60,
+        originOffset: 6,
+      }),
+      src: hourHand,
+      alt: 'hour',
+    },
+    {
+      angle: minuteAngle,
+      handStyle: getClockHandStyle({
+        type: 'm',
+        size: CLOCK_SIZE - 45,
+        mt: 30,
+        originOffset: 8,
+      }),
+      src: minuteHand,
+      alt: 'minute',
+    },
+    {
+      angle: secondAngle,
+      handStyle: getClockHandStyle({
+        type: 's',
+        size: CLOCK_SIZE - 2,
+        mt: 9,
+        originOffset: 8.5,
+      }),
+      src: secondHand,
+      alt: 'second',
+    },
+  ];
+
   return (
     <Container>
       <NextImage
@@ -51,71 +88,60 @@ const Clock = () => {
         width={1000}
         height={1000}
       />
-      <div
-        css={[
-          {
-            rotate: `${hourAngle}deg`,
-          },
-        ]}
-      >
-        <NextImage
-          suppressHydrationWarning={true}
+      {clockHands.map(({ angle, handStyle, src, alt }) => (
+        <HandContainer
+          key={src}
           css={[
-            getClockHandStyle('h', (CLOCK_SIZE * 2) / 3),
-            tw`animate-spin-hour`,
+            {
+              rotate: `${angle}deg`,
+            },
           ]}
-          src={hourHand}
-          alt={'hour'}
-          width={1000}
-          height={1000}
-        />
-      </div>
-      <div
-        css={[
-          {
-            rotate: `${minuteAngle}deg`,
-          },
-        ]}
-      >
-        <NextImage
-          suppressHydrationWarning={true}
-          css={[getClockHandStyle('m'), tw`animate-spin-minute`]}
-          src={minuteHand}
-          alt={'minute'}
-          width={1000}
-          height={1000}
-        />
-      </div>
-      <div
-        css={[
-          {
-            rotate: `${secondAngle}deg`,
-          },
-        ]}
-      >
-        <NextImage
-          suppressHydrationWarning={true}
-          css={[getClockHandStyle('s'), tw`animate-spin-second`]}
-          src={secondHand}
-          alt={'second'}
-          width={1000}
-          height={1000}
-        />
-      </div>
+        >
+          <NextImage
+            suppressHydrationWarning={true}
+            css={handStyle}
+            src={src}
+            alt={alt}
+            width={1000}
+            height={1000}
+          />
+        </HandContainer>
+      ))}
     </Container>
   );
 };
 
-const getClockHandStyle = (type: THandType, handSize = CLOCK_SIZE - 30) => [
-  tw`animate-spin`,
+const rotate = keyframes`
+  100% {
+    transform: rotateZ(360deg);
+  }
+`;
+
+const HandContainer = styled.div(() => [
+  tw`absolute`,
   css`
-    position: absolute;
-    object-fit: contain;
-    height: ${handSize}px;
-    top: 50%;
-    transform-origin: 50% 0;
+    width: ${CLOCK_SIZE}px;
+    height: ${CLOCK_SIZE}px;
   `,
-];
+]);
+
+const getClockHandStyle = ({
+  type,
+  size,
+  mt,
+  originOffset,
+}: {
+  type: THandType;
+  size: number;
+  mt: number;
+  originOffset: number;
+}) => css`
+  height: ${size / 2}px;
+  object-fit: contain;
+  margin-top: ${mt}px;
+  transform-origin: 50% calc(100% - ${originOffset}px);
+  animation: ${rotate} ${ANIMATION[type]};
+`;
 
 const Container = styled.div(() => [
   tw`relative aspect-square h-full`,

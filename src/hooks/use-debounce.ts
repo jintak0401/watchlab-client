@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const useDebounce = (callback: (cbArgs: any) => void, term: number) => {
   const timer = useRef<ReturnType<typeof setTimeout>>();
 

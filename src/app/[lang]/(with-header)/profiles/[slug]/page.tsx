@@ -36,13 +36,10 @@ const ProfilePostPage = async ({ params: { lang, slug } }: Props) => {
   const post = await getPost(`profiles/${slug}`, lang);
 
   return (
-    <>
-      {/* @ts-expect-error Server Component */}
       <Hydration queryKey={queryKey} queryFn={queryFn}>
         <ProfileChain />
         <PostContent content={post.content} />
       </Hydration>
-    </>
   );
 };
 

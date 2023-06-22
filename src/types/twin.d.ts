@@ -32,7 +32,8 @@ declare module 'react' {
 // The 'as' prop on styled components
 declare global {
   namespace JSX {
-    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
+    interface IntrinsicAttributes extends DOMAttributes {
+      key?: string | number;
       as?: string | Element;
     }
   }

@@ -9,6 +9,7 @@
  type Tmp = Union<typeof tmp>; // Tmp = 'a' | 'b' | 'c'
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 type Array2Type<T extends ReadonlyArray<any>> = T[number];
 type ObjectKey2Type<T extends { [i: string]: any }> = keyof T;
 type Union<T> = T extends ReadonlyArray<any>

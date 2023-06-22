@@ -15,8 +15,6 @@ const GlossaryPage = async ({ params: { lang } }: OnlyLangProps) => {
   const queryKey = [GLOSSARY_KEY, lang];
   const queryFn = () => getGlossary(lang);
   return (
-    <>
-      {/* @ts-expect-error Server Component */}
       <Hydration queryKey={queryKey} queryFn={queryFn}>
         <GlossaryLayout>
           <Title>{t('title')}</Title>
@@ -25,7 +23,6 @@ const GlossaryPage = async ({ params: { lang } }: OnlyLangProps) => {
           <CharPicker />
         </GlossaryLayout>
       </Hydration>
-    </>
   );
 };
 export default GlossaryPage;

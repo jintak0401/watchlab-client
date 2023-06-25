@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { keyframes } from 'styled-components';
 import tw, { css, styled } from 'twin.macro';
 
-import { CLOCK_SIZE } from '@/utils/constants';
+import { CLOCK_SIZE } from '@/styles/header';
 import { calcClockRotate } from '@/utils/time';
 
 type THandType = 'h' | 'm' | 's';

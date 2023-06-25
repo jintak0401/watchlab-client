@@ -7,10 +7,11 @@ import { useState } from 'react';
 import tw, { css, styled } from 'twin.macro';
 
 import ButtonList from '@/components/common/header/button-list';
-import Clock from '@/components/common/header/clock';
 import ClockButton from '@/components/common/header/clock-button';
+import ClockList from '@/components/common/header/clock-list';
+import DateDisplay from '@/components/common/header/date-display';
 
-import { CLOCK_SIZE } from '@/utils/constants';
+import { CLOCK_COLLAPSE_HEIGHT } from '@/styles/header';
 
 const HeaderMain = () => {
   const [openClockCollapse, setOpenClockCollapse] = useState(false);
@@ -32,8 +33,8 @@ const HeaderMain = () => {
       </Upside>
       <Hr />
       <ClockCollapse open={openClockCollapse}>
-        {/*<ClockCollapse >*/}
-        <Clock />
+        <ClockList />
+        <DateDisplay />
       </ClockCollapse>
     </>
   );
@@ -42,12 +43,12 @@ const HeaderMain = () => {
 const Upside = tw.div`flex w-full items-center justify-between bg-white px-10`;
 
 const ClockCollapse = styled.div<{ open: boolean }>(({ open }) => [
-  tw`flex w-full items-center justify-center overflow-hidden bg-orange-100`,
+  tw`flex w-full flex-col items-center justify-center overflow-hidden bg-orange-100`,
   css`
     transition: height;
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
-    height: ${open ? `${CLOCK_SIZE + 40}px` : '0'};
+    height: ${open ? `${CLOCK_COLLAPSE_HEIGHT}px` : '0'};
   `,
 ]);
 

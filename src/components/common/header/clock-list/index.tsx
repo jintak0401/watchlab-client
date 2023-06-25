@@ -1,6 +1,7 @@
 import tw, { css, styled } from 'twin.macro';
 
 import WorldClock from '@/components/common/header/clock-list/world-clock';
+import ZodiacClock from '@/components/common/header/clock-list/zodiac-clock';
 
 import { CLOCK_SIZE } from '@/styles/header';
 
@@ -10,7 +11,7 @@ const ClockList = () => {
   const list = [
     { name: 'WORLD TIME', Component: WorldClock },
     { name: 'TIME', Component: Clock },
-    { name: 'ZODIAC TIME', Component: WorldClock },
+    { name: 'ZODIAC TIME', Component: ZodiacClock },
   ];
 
   return (

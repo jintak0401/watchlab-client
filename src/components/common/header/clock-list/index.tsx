@@ -7,11 +7,23 @@ import { CLOCK_SIZE } from '@/styles/header';
 import Clock from './clock';
 
 const ClockList = () => {
+  const list = [
+    { name: 'WORLD TIME', Component: WorldClock },
+    { name: 'TIME', Component: Clock },
+    { name: 'ZODIAC TIME', Component: WorldClock },
+  ];
+
   return (
     <Container>
-      <WorldClock />
-      <Clock />
-      <div>3</div>
+      {list.map(({ name, Component }) => (
+        <div
+          key={name}
+          tw={'flex flex-col items-center justify-center gap-y-2'}
+        >
+          <h4 tw={'font-franklin text-xl'}>{name}</h4>
+          <Component />
+        </div>
+      ))}
     </Container>
   );
 };

@@ -43,7 +43,7 @@ const HeaderMain = () => {
 const Upside = tw.div`flex w-full items-center justify-between bg-white px-10`;
 
 const ClockCollapse = styled.div<{ open: boolean }>(({ open }) => [
-  tw`flex w-full flex-col items-center justify-center overflow-hidden bg-orange-100`,
+  tw`flex w-full flex-col items-center justify-center overflow-hidden bg-[#dedee0]`,
   css`
     transition: height;
     transition-duration: 0.5s;

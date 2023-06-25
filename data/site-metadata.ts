@@ -14,6 +14,8 @@ const siteMetadata = {
       hourHand: '/static/images/common/clock/hour.png',
       minuteHand: '/static/images/common/clock/minute.png',
       secondHand: '/static/images/common/clock/second.png',
+      worldClockPlate: '/static/images/common/clock/world-clock-plate.png',
+      worldClockRotate: '/static/images/common/clock/world-clock-rotate.png',
     },
     study: [
       '/static/images/study/10-1.png',

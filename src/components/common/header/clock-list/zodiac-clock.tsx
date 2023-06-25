@@ -25,6 +25,7 @@ const ZodiacClock = () => {
     };
 
     timeout = setTimeout(() => {
+      rotateHand();
       timeout && clearTimeout(timeout);
       const date = new Date();
       const curHour = date.getHours();

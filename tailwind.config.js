@@ -34,6 +34,7 @@ module.exports = {
         'crimson-pro': ['var(--font-crimson-pro)', ...fontFamily.serif],
         inknut: ['var(--font-inknut-antiqua)', ...fontFamily.serif],
         della: ['var(--font-della-respira)', ...fontFamily.serif],
+        franklin: ['var(--font-libre-franklin)', ...fontFamily.serif],
       },
       backgroundImage: {
         glossary: "url('/static/images/glossary/background.webp')",

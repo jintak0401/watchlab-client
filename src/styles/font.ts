@@ -5,6 +5,7 @@ import {
   Della_Respira,
   Inknut_Antiqua,
   Libre_Baskerville,
+  Libre_Franklin,
 } from 'next/font/google';
 
 export const cormorantGaramond = Cormorant_Garamond({
@@ -35,6 +36,12 @@ export const libre = Libre_Baskerville({
   weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-libre-baskerville',
+});
+
+export const libreFranklin = Libre_Franklin({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-libre-franklin',
 });
 
 export const della = Della_Respira({

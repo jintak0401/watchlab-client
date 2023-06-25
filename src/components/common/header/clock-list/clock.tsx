@@ -3,10 +3,9 @@
 import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import { useEffect, useState } from 'react';
-import { keyframes } from 'styled-components';
 import tw, { css, styled } from 'twin.macro';
 
-import { CLOCK_SIZE } from '@/styles/header';
+import { CLOCK_SIZE, ROTATE_ANIMATION } from '@/styles/header';
 import { calcClockRotate } from '@/utils/time';
 
 type THandType = 'h' | 'm' | 's';
@@ -110,12 +109,6 @@ const Clock = () => {
   );
 };
 
-const rotate = keyframes`
-  100% {
-    transform: rotateZ(360deg);
-  }
-`;
-
 const HandContainer = styled.div(() => [
   tw`absolute`,
   css`
@@ -139,7 +132,7 @@ const getClockHandStyle = ({
   object-fit: contain;
   margin-top: ${mt}px;
   transform-origin: 50% calc(100% - ${originOffset}px);
-  animation: ${rotate} ${ANIMATION[type]};
+  animation: ${ROTATE_ANIMATION} ${ANIMATION[type]};
 `;
 
 const Container = styled.div(() => [

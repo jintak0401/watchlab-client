@@ -1,10 +1,9 @@
 import siteMetadata from 'data/site-metadata';
 import NextImage from 'next/image';
 import { useEffect, useState } from 'react';
-import { keyframes } from 'styled-components';
 import { css, styled } from 'twin.macro';
 
-import { CLOCK_SIZE } from '@/styles/header';
+import { CLOCK_SIZE, ROTATE_ANIMATION } from '@/styles/header';
 
 const ROTATE_SIZE = CLOCK_SIZE * 0.7;
 
@@ -52,12 +51,6 @@ const Container = styled.div`
   height: ${CLOCK_SIZE}px;
 `;
 
-const rotate = keyframes`
-  100% {
-    transform: rotate(360deg);
-  }
-`;
-
 const getRotateDegree = (hour: number, minute: number) => {
   return (hour - 12) * 15 + minute * 0.25;
 };
@@ -72,7 +65,7 @@ const RotatePositioner = styled.div`
 `;
 
 const RotateRotator = styled.div`
-  animation: ${rotate} 24h linear infinite;
+  animation: ${ROTATE_ANIMATION} 24h linear infinite;
 `;
 
 export default WorldClock;

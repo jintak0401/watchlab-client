@@ -1,6 +1,7 @@
 'use client';
 
 import siteMetadata from 'data/site-metadata';
+import dynamic from 'next/dynamic';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 import { useState } from 'react';
@@ -8,10 +9,17 @@ import tw, { css, styled } from 'twin.macro';
 
 import ButtonList from '@/components/common/header/button-list';
 import ClockButton from '@/components/common/header/clock-button';
-import ClockList from '@/components/common/header/clock-list';
-import DateDisplay from '@/components/common/header/date-display';
 
 import { CLOCK_COLLAPSE_HEIGHT } from '@/styles/header';
+
+const ClockList = dynamic(
+  () => import('@/components/common/header/clock-list'),
+  { ssr: false }
+);
+const DateDisplay = dynamic(
+  () => import('@/components/common/header/date-display'),
+  { ssr: false }
+);
 
 const HeaderMain = () => {
   const [openClockCollapse, setOpenClockCollapse] = useState(false);

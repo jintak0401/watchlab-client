@@ -16,6 +16,8 @@ const siteMetadata = {
       secondHand: '/static/images/common/clock/second.png',
       worldClockPlate: '/static/images/common/clock/world-clock-plate.png',
       worldClockRotate: '/static/images/common/clock/world-clock-rotate.png',
+      zodiacClockPlate: '/static/images/common/clock/zodiac-clock-plate.png',
+      zodiacClockHand: '/static/images/common/clock/zodiac-clock-hand.png',
     },
     study: [
       '/static/images/study/10-1.png',

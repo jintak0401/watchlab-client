@@ -12,6 +12,7 @@ import {
   della,
   inknutAntiqua,
   libre,
+  libreFranklin,
 } from '@/styles/font';
 import GlobalStyles from '@/styles/global-styles';
 import { Union } from '@/types';
@@ -39,7 +40,7 @@ const ClientLayout = ({ lang, children }: Props) => {
       <GlobalStyles />
       <html lang={lang}>
         <body
-          className={`${cormorantGaramond.variable} ${crimsonText.variable} ${inknutAntiqua.variable} ${crimsonPro.variable} ${libre.variable} ${della.variable} font-sans-serif`}
+          className={`${cormorantGaramond.variable} ${crimsonText.variable} ${inknutAntiqua.variable} ${crimsonPro.variable} ${libre.variable} ${libreFranklin.variable} ${della.variable} font-sans-serif`}
         >
           <QueryClientProvider client={queryClient}>
             {children}

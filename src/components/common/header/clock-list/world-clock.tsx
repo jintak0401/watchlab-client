@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { css, styled } from 'twin.macro';
 
 import { CLOCK_SIZE, ROTATE_ANIMATION } from '@/styles/header';
+import { ONE_DAY_MS } from '@/utils/constants';
 
 const ROTATE_SIZE = CLOCK_SIZE * 0.7;
 
@@ -65,7 +66,7 @@ const RotatePositioner = styled.div`
 `;
 
 const RotateRotator = styled.div`
-  animation: ${ROTATE_ANIMATION} 24h linear infinite;
+  animation: ${ROTATE_ANIMATION} ${ONE_DAY_MS / 1000}s linear infinite;
 `;
 
 export default WorldClock;

@@ -1,5 +1,5 @@
 import { PropsWithTw, useReducer } from 'react';
-import tw from 'twin.macro';
+import tw, { css } from 'twin.macro';
 
 import useEveryMidnight from '@/hooks/use-every-midnight';
 
@@ -13,17 +13,21 @@ const WeekOfYear = ({ className }: PropsWithTw) => {
 
   return (
     <Container className={className}>
-      <WeekContainer>
-        <div tw={'grow font-franklin text-3xl'}>WEEK</div>
-        <div tw={'font-franklin text-5xl grow-[2]'}>
-          {todayWeek} / {totalWeek}
-        </div>
-      </WeekContainer>
+      <div tw={'font-franklin text-base'}>WEEK</div>
+      <div
+        css={[
+          tw`font-franklin grow-[2]`,
+          css`
+            font-size: 1.4rem;
+          `,
+        ]}
+      >
+        {todayWeek} / {totalWeek}
+      </div>
     </Container>
   );
 };
 
-const Container = tw.div`flex h-full`;
-const WeekContainer = tw.div`flex flex-1 flex-col items-center justify-center`;
+const Container = tw.div`flex flex-1 h-full flex-col items-center justify-between`;
 
 export default WeekOfYear;

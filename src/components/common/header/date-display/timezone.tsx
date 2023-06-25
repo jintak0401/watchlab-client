@@ -17,6 +17,6 @@ const Timezone = () => {
   );
 };
 
-const Container = tw.div`mx-auto flex w-1/3 px-4 text-2xl`;
+const Container = tw.div`mx-auto flex w-1/3 px-4 text-base`;
 
 export default Timezone;

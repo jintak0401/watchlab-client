@@ -19,6 +19,6 @@ const YearDisplay = () => {
   );
 };
 
-const Container = tw.div`flex h-full flex-col items-center justify-center text-2xl`;
+const Container = tw.div`flex h-full flex-col items-center justify-center text-base`;
 
 export default YearDisplay;

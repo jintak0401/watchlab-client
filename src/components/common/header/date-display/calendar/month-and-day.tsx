@@ -12,8 +12,8 @@ const MonthAndDay = ({ className }: PropsWithTw) => {
 
   return (
     <Container className={className}>
-      <div tw={'font-franklin text-4xl'}>{day}</div>
-      <div tw={'font-franklin text-4xl'}>{month}</div>
+      <div tw={'font-franklin'}>{day}</div>
+      <div tw={'font-franklin'}>{month}</div>
     </Container>
   );
 };

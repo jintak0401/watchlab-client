@@ -20,6 +20,6 @@ const DigitalClock = () => {
 
 const Time = tw.time`my-auto flex`;
 
-const TimeText = tw.div`inline-block flex-1 text-center font-franklin text-8xl`;
+const TimeText = tw.div`inline-block flex-1 text-center font-franklin text-5xl`;
 
 export default DigitalClock;

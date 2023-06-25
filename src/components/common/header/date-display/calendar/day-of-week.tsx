@@ -11,8 +11,8 @@ const DayOfWeek = ({ className }: PropsWithTw) => {
   useEveryMidnight(forceRerender);
   return (
     <Container className={className}>
-      <div tw={'font-franklin text-4xl'}>{DAY_OF_WEEK[dayOfWeek]}</div>
-      <div tw={'flex w-full items-center text-4xl'}>
+      <div tw={'font-franklin'}>{DAY_OF_WEEK[dayOfWeek]}</div>
+      <div tw={'flex w-full items-center'}>
         {DAY_OF_WEEK.map((day, idx) => (
           <span
             css={[

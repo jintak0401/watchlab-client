@@ -16,6 +16,6 @@ const CenturyAndLunar = () => {
   );
 };
 
-const Container = tw.div`flex h-full items-center justify-center [&>*]:flex-1`;
+const Container = tw.div`flex h-full items-center text-base [&>*]:flex-1`;
 
 export default CenturyAndLunar;

@@ -9,10 +9,10 @@ const LeapYearDisplay = ({ className }: PropsWithTw) => {
   return (
     <Container className={className}>
       <Text>1</Text>
-      <div tw={'flex flex-1 w-3/5 items-center justify-center'}>
+      <div tw={'flex flex-1 w-full items-center justify-center'}>
         <Text>4</Text>
         <HiOutlineArrowLongLeft
-          size={26}
+          size={20}
           style={{
             rotate: `${rotateDegree}deg`,
           }}
@@ -24,8 +24,8 @@ const LeapYearDisplay = ({ className }: PropsWithTw) => {
   );
 };
 
-const Container = tw.div`flex h-full flex-col items-center justify-center`;
+const Container = tw.div`flex h-full flex-col items-center justify-center text-xl`;
 
-const Text = tw.div`flex-1 text-center text-2xl`;
+const Text = tw.div`flex-1 text-center font-franklin`;
 
 export default LeapYearDisplay;

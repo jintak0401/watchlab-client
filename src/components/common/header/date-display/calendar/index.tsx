@@ -14,6 +14,6 @@ const Calendar = () => {
   );
 };
 
-const Container = tw.div`flex h-full`;
+const Container = tw.div`flex h-full items-center text-xl`;
 
 export default Calendar;

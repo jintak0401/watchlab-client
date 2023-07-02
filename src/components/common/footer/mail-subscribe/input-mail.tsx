@@ -44,7 +44,7 @@ const Form = styled.form(() => [
   `,
 ]);
 
-const Input = tw.input`h-full w-full border-2 border-white bg-transparent px-3 text-2xl text-white outline-none placeholder:italic`;
+const Input = tw.input`h-full w-full border-2 border-white bg-transparent px-3 pr-28 text-2xl text-white outline-none placeholder:italic`;
 
 const SubmitButton = tw.button`absolute right-2 top-3 z-20 inline-block rounded-sm bg-white! py-0.5 px-1.5`;
 

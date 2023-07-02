@@ -4,6 +4,9 @@
       "title": "Get our latest content delivered to your inbox.",
       "placeholder": "Your email address",
       "description": "Signing up for our email notifications is a great way of making sure you don't miss our new content. You'll also be the first to find out about the exciting new stuff we're making. Your information is stored, accessed, and protected as stated in our terms and conditions."
+    },
+    "copyright": {
+      "description": "© 2023 - %d HURUM TIME WORKSHOP. ALL RIGHTS RESERVED"
     }
   }
 }

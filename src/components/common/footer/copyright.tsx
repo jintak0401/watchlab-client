@@ -8,7 +8,7 @@ import tw, { css, styled } from 'twin.macro';
 import useLocale from '@/hooks/use-locale';
 
 import { useTranslation } from '@/i18n/client';
-import { FOOTER_LOGO_SIZE, MADE_BY_LOGO_SIZE } from '@/styles/footer';
+import { COPYRIGHT_LOGO, MADE_BY_LOGO_SIZE } from '@/styles/footer';
 
 const Copyright = () => {
   const year = new Date().getFullYear();
@@ -31,8 +31,8 @@ const Copyright = () => {
                 css={[tw`inline-block`]}
                 src={siteMetadata.images.logo}
                 alt={'logo'}
-                width={FOOTER_LOGO_SIZE}
-                height={FOOTER_LOGO_SIZE}
+                width={COPYRIGHT_LOGO}
+                height={COPYRIGHT_LOGO}
               />
             </Link>
           </Li>
@@ -61,7 +61,7 @@ const Copyright = () => {
 };
 
 const Container = styled.div(() => [
-  tw`relative flex w-full flex-col items-center justify-center gap-y-3 bg-white py-2`,
+  tw`relative flex w-full flex-col items-center justify-center gap-y-3 bg-white py-5 text-xl`,
 ]);
 
 const Nav = tw.nav`uppercase`;

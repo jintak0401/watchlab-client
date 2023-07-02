@@ -1,4 +1,5 @@
 const siteMetadata = {
+  siteUrl: 'https://www.hurumhorology.com',
   images: {
     studyBg: '/static/images/study/background.webp',
     glossaryBg: '/static/images/glossary/background.webp',
@@ -8,6 +9,7 @@ const siteMetadata = {
     loupes: '/static/images/glossary/loupes.webp',
     logo: '/static/images/common/logo.webp',
     light: '/static/images/common/light.webp',
+    mailRegistration: '/static/images/common/footer/mail-registration.png',
     dark: '/static/images/common/dark.webp',
     clock: {
       plate: '/static/images/common/clock/plate.png',
@@ -49,6 +51,10 @@ const siteMetadata = {
   },
   theme: 'light',
   revalidate: 10,
+  sns: {
+    instagram: 'https://www.instagram.com/',
+    pinterest: 'https://www.pinterest.com/',
+  },
 };
 
 export default siteMetadata;

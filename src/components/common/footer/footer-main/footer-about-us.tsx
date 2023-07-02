@@ -13,7 +13,7 @@ const FooterAboutUs = () => {
       <Ul>
         {aboutUsLinks.map(({ name, href }) => (
           <li key={name}>
-            <NextLink tw={'font-franklin text-lg'} href={`/about-us/${href}`}>
+            <NextLink tw={'font-franklin text-2xl'} href={`/about-us/${href}`}>
               {name}
             </NextLink>
           </li>
@@ -23,6 +23,6 @@ const FooterAboutUs = () => {
   );
 };
 
-const Ul = tw.ul`ml-3 font-normal`;
+const Ul = tw.ul`mt-2 ml-5 space-y-2 font-normal`;
 
 export default FooterAboutUs;

@@ -24,7 +24,7 @@ const FooterFollowUs = () => {
           return (
             <li tw={'float-left'} key={name}>
               <NextLink href={href} target="_blank">
-                <SnsIcon width={40} />
+                <SnsIcon size={50} />
               </NextLink>
             </li>
           );

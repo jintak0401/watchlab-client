@@ -9,7 +9,7 @@ const FooterLang = () => {
     <FooterMainLi>
       Languages
       <button tw={'my-2 ml-3 block'}>
-        <EnglishIcon width={40} />
+        <EnglishIcon width={60} />
       </button>
     </FooterMainLi>
   );

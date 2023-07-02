@@ -50,12 +50,14 @@ const Ul = styled.ul(() => [
 ]);
 
 export const FooterMainLi = styled.li(() => [
-  tw`w-80 font-franklin font-medium text-3xl`,
+  tw`font-franklin font-medium text-4xl`,
   css`
+    width: 550px;
     &::before {
       content: '●';
       display: block;
-      font-size: 2.5rem;
+      font-size: 4rem;
+      margin-bottom: 10px;
     }
   `,
 ]);

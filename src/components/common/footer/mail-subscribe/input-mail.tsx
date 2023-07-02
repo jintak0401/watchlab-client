@@ -39,13 +39,13 @@ const InputMail = ({ className }: Props) => {
 const Form = styled.form(() => [
   tw`relative w-72`,
   css`
-    width: 500px;
-    height: 40px;
+    width: 750px;
+    height: 50px;
   `,
 ]);
 
-const Input = tw.input`h-full w-full border-2 border-white bg-transparent px-3 text-white outline-none placeholder:italic`;
+const Input = tw.input`h-full w-full border-2 border-white bg-transparent px-3 text-2xl text-white outline-none placeholder:italic`;
 
-const SubmitButton = tw.button`absolute right-2 top-1.5 z-20 inline-block rounded-sm bg-white! py-0.5 px-1.5`;
+const SubmitButton = tw.button`absolute right-2 top-3 z-20 inline-block rounded-sm bg-white! py-0.5 px-1.5`;
 
 export default InputMail;

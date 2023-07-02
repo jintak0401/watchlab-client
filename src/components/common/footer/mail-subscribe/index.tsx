@@ -14,15 +14,15 @@ const MailSubscribe = () => {
   return (
     <Container>
       <Background>
-        <h4 tw={'font-franklin font-semibold text-white text-4xl'}>
+        <h4 tw={'font-franklin font-semibold text-white text-5xl'}>
           {t('footer.subscribe.title')}
         </h4>
         <InputMail />
         <p
           css={[
-            tw`text-center font-franklin text-white italic`,
+            tw`text-center font-franklin text-white text-2xl italic`,
             css`
-              width: 800px;
+              width: 1000px;
             `,
           ]}
         >
@@ -36,12 +36,12 @@ const MailSubscribe = () => {
 const Container = styled.div(() => [
   tw`bg-mail`,
   css`
-    height: 230px;
+    height: 350px;
   `,
 ]);
 
 const Background = styled.div(() => [
-  tw`flex h-full flex-col items-center justify-center gap-y-3 bg-mail-register bg-center bg-no-repeat`,
+  tw`flex h-full flex-col items-center justify-evenly bg-mail-register bg-center bg-no-repeat`,
   css`
     background-size: auto 100%;
   `,

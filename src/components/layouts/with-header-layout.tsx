@@ -1,17 +1,26 @@
-'use client';
-
 import { PropsWithChildren } from 'react';
 import Header from 'src/components/common/header';
 import 'twin.macro';
 
+import Footer from '@/components/common/footer';
+
+import { FOOTER_HEIGHT } from '@/styles/footer';
+
 type Props = PropsWithChildren;
+
+const mainStyle = {
+  height: '100%',
+  backgroundColor: '#eeeae3',
+  paddingBottom: FOOTER_HEIGHT,
+};
 
 const WithHeaderLayout = ({ children }: Props) => {
   return (
-    <div tw="min-h-screen bg-cream pb-10">
+    <>
       <Header />
-      {children}
-    </div>
+      <main style={mainStyle}>{children}</main>
+      <Footer />
+    </>
   );
 };
 

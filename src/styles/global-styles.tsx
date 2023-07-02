@@ -6,7 +6,7 @@ const CustomStyles = createGlobalStyle({
     ...tw`font-serif`,
   },
   body: {
-    ...tw`select-none overflow-x-hidden antialiased print:hidden`,
+    ...tw`flex min-h-screen select-none flex-col overflow-x-hidden antialiased print:hidden [&>main]:flex-1`,
   },
   '.pagebreak': {
     height: 20,

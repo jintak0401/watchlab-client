@@ -29,4 +29,23 @@ const navLinks: {
   ],
 };
 
+export const aboutUsLinks = [
+  {
+    name: 'Who We Are',
+    href: 'who-we-are',
+  },
+  {
+    name: 'Our Services',
+    href: 'our-services',
+  },
+  {
+    name: 'Terms and Conditions',
+    href: 'terms-and-conditions',
+  },
+  {
+    name: 'Get in Touch',
+    href: 'get-in-touch',
+  },
+];
+
 export default navLinks;

@@ -39,7 +39,7 @@ export const libre = Libre_Baskerville({
 });
 
 export const libreFranklin = Libre_Franklin({
-  weight: ['400', '700'],
+  weight: ['400', '500', '700'],
   subsets: ['latin'],
   variable: '--font-libre-franklin',
 });
